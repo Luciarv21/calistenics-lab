@@ -1,0 +1,371 @@
+/* Programs / services grid, cards, expanded panel, locations, schedule */
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 24px;
+  padding-bottom: 60px;
+}
+
+.service-card {
+  position: relative;
+  cursor: pointer;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--mid-gray);
+  border-radius: 12px;
+  padding: 32px 24px;
+  transition: all 0.3s ease;
+}
+
+.service-card:hover {
+  border-color: var(--emerald);
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(4, 120, 87, 0.15);
+}
+
+.service-card.featured {
+  border-color: var(--emerald);
+}
+
+.service-card.selected {
+  border-color: var(--emerald-glow);
+  box-shadow: 0 8px 30px rgba(16, 185, 129, 0.2);
+  transform: translateY(-4px);
+}
+
+.service-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background-color: var(--emerald);
+  color: var(--white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  padding: 4px 16px;
+  border-radius: 20px;
+}
+
+.service-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--mid-gray);
+  color: var(--white);
+}
+
+.service-card p {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  margin-bottom: 16px;
+}
+
+.service-details {
+  list-style: none;
+  margin-bottom: 20px;
+}
+
+.service-details li {
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  padding: 4px 0;
+  padding-left: 16px;
+  position: relative;
+}
+
+.service-details li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--emerald-glow);
+  font-weight: bold;
+}
+
+.service-price {
+  display: inline-block;
+  color: var(--emerald-glow);
+  font-weight: 700;
+  font-size: 1.1rem;
+}
+
+.service-expanded {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease, opacity 0.3s ease;
+  opacity: 0;
+}
+
+.service-expanded.open {
+  max-height: none;
+  opacity: 1;
+  margin-top: 32px;
+  margin-bottom: 60px;
+}
+
+.expanded-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 0;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--emerald);
+  border-radius: 12px;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.expanded-image {
+  position: relative;
+  min-height: 500px;
+}
+
+.expanded-image img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 12px 0 0 12px;
+  -webkit-mask-image: linear-gradient(to right, black 50%, transparent 100%);
+  mask-image: linear-gradient(to right, black 50%, transparent 100%);
+}
+
+.expanded-details {
+  padding: 40px;
+}
+
+.expanded-image .image-placeholder {
+  aspect-ratio: 4/3;
+}
+
+.expanded-details h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 16px;
+}
+
+.expanded-text {
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+.expanded-details .service-details {
+  margin-bottom: 20px;
+}
+
+.expanded-details .service-price {
+  display: block;
+  margin-bottom: 24px;
+}
+
+.expanded-cta {
+  display: inline-block;
+}
+
+.expanded-section {
+  margin-top: 32px;
+  padding-top: 32px;
+  border-top: 1px solid var(--mid-gray);
+}
+
+.expanded-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--emerald-glow);
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.expanded-section-subtitle {
+  text-align: center;
+  color: var(--light-gray);
+  margin-bottom: 24px;
+}
+
+.locations-subheading {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--white);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 12px;
+}
+
+.locations-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.location-item {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--mid-gray);
+  border-radius: 8px;
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+}
+
+.location-item:hover {
+  border-color: var(--emerald);
+  color: var(--white);
+}
+
+.location-card {
+  text-align: center;
+  padding: 40px;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--mid-gray);
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.location-pin {
+  font-size: 2rem;
+  color: var(--emerald-glow);
+  margin-bottom: 12px;
+}
+
+.location-card h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 20px;
+}
+
+.location-map {
+  margin-bottom: 60px;
+}
+
+.schedule-table {
+  max-width: 600px;
+  margin: 0 auto 40px;
+}
+
+.schedule-table table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th {
+  text-align: left;
+  padding: 12px 20px;
+  color: var(--emerald-glow);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--emerald);
+}
+
+.schedule-table td {
+  padding: 16px 20px;
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.schedule-table tr:hover td {
+  color: var(--white);
+  background-color: var(--dark-gray);
+}
+
+.schedule-pricing-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--emerald-glow);
+  margin-bottom: 24px;
+}
+
+.pricing-cards {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  padding-bottom: 60px;
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 32px 40px;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--mid-gray);
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+  min-width: 220px;
+}
+
+.pricing-card:hover {
+  border-color: var(--emerald);
+}
+
+.pricing-frequency {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--white);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.pricing-per-class {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--emerald-glow);
+}
+
+.pricing-total {
+  font-size: 0.95rem;
+  color: var(--light-gray);
+}
+
+.schedule-note {
+  text-align: center;
+  color: var(--light-gray);
+  font-size: 0.9rem;
+  font-style: italic;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .expanded-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .expanded-image {
+    min-height: 250px;
+    position: relative;
+  }
+
+  .expanded-image img {
+    border-radius: 12px 12px 0 0;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  .expanded-details {
+    padding: 24px;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 300px;
+  }
+}

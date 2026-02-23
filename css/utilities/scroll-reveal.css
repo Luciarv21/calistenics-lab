@@ -1,0 +1,28 @@
+/* Scroll-triggered reveal animation */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-section.reveal:nth-child(even) {
+  transform: translateX(-40px);
+}
+
+.about-section.reveal:nth-child(odd) {
+  transform: translateX(40px);
+}
+
+.about-section.reveal.revealed {
+  transform: translateX(0);
+}
+
+.intro-bullets li.reveal {
+  transition-delay: calc(var(--i, 0) * 0.1s);
+}

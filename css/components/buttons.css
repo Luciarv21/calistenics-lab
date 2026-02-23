@@ -1,0 +1,34 @@
+/* Primary and outline buttons */
+
+.btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background-color: var(--emerald);
+  color: var(--white);
+  border: 2px solid var(--emerald);
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background-color: var(--emerald-light);
+  border-color: var(--emerald-light);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 20px rgba(16, 185, 129, 0.3);
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--emerald-glow);
+}
+
+.btn-outline:hover {
+  background-color: var(--emerald);
+  color: var(--white);
+}
