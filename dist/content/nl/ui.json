@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "welcome": "Welkom",
+    "about": "Over",
+    "services": "Programma's",
+    "contact": "Contact",
+    "reviews": "Reviews"
+  },
+  "form": {
+    "name": "Naam",
+    "email": "E-mail",
+    "subject": "Onderwerp",
+    "message": "Bericht",
+    "subjectPlaceholder": "Waar bent u in geïnteresseerd?",
+    "namePlaceholder": "Uw naam",
+    "emailPlaceholder": "uw@email.nl",
+    "messagePlaceholder": "Vertel ons over uw doelen...",
+    "submit": "Verstuur",
+    "success": "Bericht verzonden! We nemen snel contact op."
+  },
+  "contact": {
+    "locationLabel": "Locatie",
+    "socialLabel": "Volg ons"
+  }
+}

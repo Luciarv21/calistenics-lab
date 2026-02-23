@@ -1,0 +1,14 @@
+---
+description: Always run Prettier on modified files
+alwaysApply: true
+---
+
+# Formatting
+
+After modifying any project file (HTML, CSS, JS, JSON, MD, config files), run the formatter so the codebase stays consistent.
+
+- **Command:** `npm run format` (formats the whole project) or format only changed files with Prettier.
+- **Config:** `.prettierrc` (single quotes, 2 spaces, 100 print width, trailing commas ES5).
+- **Ignore:** `node_modules`, `dist`, `.git`, minified files (see `.prettierignore`).
+
+Prefer running `npm run format` once at the end of a set of edits rather than after every single file. If you only changed one or two files, you can run: `npx prettier --write path/to/file1 path/to/file2`.

@@ -1,0 +1,37 @@
+heading: About Calisthenics Skill Lab Amsterdam
+
+stat: 100+ | Athletes Trained
+stat: 3+ | Years Experience
+stat: AMS | Based in Amsterdam
+
+---
+section_title: Meet Coach Bryan
+section_subtitle: Founder of Calisthenics SkillLab Amsterdam
+section_quote: From competing at the National Championships to coaching you toward your first Muscle-up.
+section_image: images/meet_coach_bryan.jpg
+paragraph: My name is Bryan, and for over seven years, calisthenics has been the core of my life. What started as a personal passion evolved into my full-time mission in April 2023 when I founded Calisthenics Zaanstad. After years of building a thriving community there, my move to Amsterdam in February 2026 marked the beginning of a new chapter: <strong>Calisthenics SkillLab Amsterdam</strong>.
+
+---
+layout: stacked
+section_title: Experience Meets Results
+section_image: images/experience_meets_results.jpg
+paragraph: I don't just teach the sport; I live it. In 2022 and 2024, I competed in the <strong>Dutch National Calisthenics Championships (NK)</strong>, testing my skills against the best athletes in the country. These experiences sharpened my technical knowledge and deepened my commitment to helping others break through their own physical limits.
+
+---
+section_title: A New Vision for Amsterdam
+section_image: images/a_new_vision_for_amsterdam.jpeg
+paragraph: While I continue to lead group lessons in Zaanstad, the Amsterdam SkillLab is designed for those seeking a more exclusive and personalized experience.
+paragraph: I've shifted my focus away from large groups to offer high-impact coaching through <strong>Private and Semi-Private sessions</strong>, as well as <strong>Online programming</strong>. This transition allows me to provide every athlete with a 100% tailor-made training schedule, ensuring that your progress is tracked with precision.
+heading2: The Best Training Grounds in the City
+paragraph: We take our training to the most inspiring outdoor spots in Amsterdam. Whether we are working on your skills in Rembrandtpark or Oosterpark, or hitting the calisthenics park near Sloterplas for our Semi-Private sessions, the city is our gym.
+paragraph: My goal is to help you build more than just muscle. We focus on:
+bullet: Mastering Impressive Skills | Handstands, Muscle-ups, and Levers
+bullet: Improving Posture & Mobility | Move better, feel better
+bullet: Building Confidence | Balance, coordination, and self-belief
+paragraph: Whether you are a complete beginner or an advanced athlete looking for that competitive edge, I am here to provide the structure and coaching you need to reach your goals.
+
+---
+layout: cta
+cta_text: Ready to level up?
+cta_button: Book your intake with Bryan
+cta_tab: contact

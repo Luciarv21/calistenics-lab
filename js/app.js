@@ -8,8 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== TAB NAVIGATION ==========
 
   function switchTab(tabId) {
-    tabContents.forEach(tab => tab.classList.remove('active'));
-    navLinks.forEach(link => link.classList.remove('active'));
+    tabContents.forEach((tab) => tab.classList.remove('active'));
+    navLinks.forEach((link) => link.classList.remove('active'));
 
     const targetTab = document.getElementById(tabId);
     if (targetTab) targetTab.classList.add('active');
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Attach click handlers to all [data-tab] elements (nav links + CTA buttons)
   function bindTabTriggers() {
-    document.querySelectorAll('[data-tab]').forEach(trigger => {
+    document.querySelectorAll('[data-tab]').forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
         switchTab(trigger.getAttribute('data-tab'));
@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function parseKeyValue(text) {
     const result = {};
-    const lines = text.split('\n').filter(l => l.trim());
+    const lines = text.split('\n').filter((l) => l.trim());
     for (const line of lines) {
       const colonIndex = line.indexOf(':');
       if (colonIndex === -1) continue;
@@ -82,7 +82,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function parseSections(text) {
-    return text.split('\n---\n').filter(s => s.trim());
+    return text.split('\n---\n').filter((s) => s.trim());
   }
 
   // ---- Hero ----
@@ -119,7 +119,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     // Paragraphs before highlight
     if (introData.paragraph) {
-      const paragraphs = Array.isArray(introData.paragraph) ? introData.paragraph : [introData.paragraph];
+      const paragraphs = Array.isArray(introData.paragraph)
+        ? introData.paragraph
+        : [introData.paragraph];
       paragraphs.forEach((p, i) => {
         introHtml += `<p class="intro-paragraph">${p}</p>`;
         // Insert highlight after second paragraph
@@ -136,8 +138,8 @@ document.addEventListener('DOMContentLoaded', () => {
     if (introData.bullet) {
       const bullets = Array.isArray(introData.bullet) ? introData.bullet : [introData.bullet];
       introHtml += '<ul class="intro-bullets">';
-      bullets.forEach(b => {
-        const [title, desc] = b.split('|').map(s => s.trim());
+      bullets.forEach((b) => {
+        const [title, desc] = b.split('|').map((s) => s.trim());
         introHtml += `<li><strong>${title}</strong><span>${desc}</span></li>`;
       });
       introHtml += '</ul>';
@@ -149,15 +151,15 @@ document.addEventListener('DOMContentLoaded', () => {
   // ---- About ----
   // Renders lines in order so headings, paragraphs, bullets appear sequentially
   function renderOrderedContent(raw) {
-    const lines = raw.split('\n').filter(l => l.trim());
+    const lines = raw.split('\n').filter((l) => l.trim());
     let html = '';
     let bulletBuffer = [];
 
     function flushBullets() {
       if (bulletBuffer.length === 0) return;
       html += '<ul class="intro-bullets">';
-      bulletBuffer.forEach(b => {
-        const [title, desc] = b.split('|').map(s => s.trim());
+      bulletBuffer.forEach((b) => {
+        const [title, desc] = b.split('|').map((s) => s.trim());
         html += `<li><strong>${title}</strong><span>${desc || ''}</span></li>`;
       });
       html += '</ul>';
@@ -199,10 +201,14 @@ document.addEventListener('DOMContentLoaded', () => {
           break;
         case 'cta_text':
           // Find the matching cta_button and cta_tab from all lines
-          const ctaBtnLine = lines.find(l => l.toLowerCase().startsWith('cta_button:'));
-          const ctaTabLine = lines.find(l => l.toLowerCase().startsWith('cta_tab:'));
-          const ctaLabel = ctaBtnLine ? ctaBtnLine.substring(ctaBtnLine.indexOf(':') + 1).trim() : 'Get Started';
-          const ctaTab = ctaTabLine ? ctaTabLine.substring(ctaTabLine.indexOf(':') + 1).trim() : 'contact';
+          const ctaBtnLine = lines.find((l) => l.toLowerCase().startsWith('cta_button:'));
+          const ctaTabLine = lines.find((l) => l.toLowerCase().startsWith('cta_tab:'));
+          const ctaLabel = ctaBtnLine
+            ? ctaBtnLine.substring(ctaBtnLine.indexOf(':') + 1).trim()
+            : 'Get Started';
+          const ctaTab = ctaTabLine
+            ? ctaTabLine.substring(ctaTabLine.indexOf(':') + 1).trim()
+            : 'contact';
           html += `<div class="about-cta"><p class="about-cta-text">${value}</p><a href="#${ctaTab}" class="btn" data-tab="${ctaTab}">${ctaLabel}</a></div>`;
           break;
         case 'cta_button':
@@ -222,7 +228,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const allSections = parseSections(raw);
     const header = parseKeyValue(allSections[0]);
     const sectionRaws = allSections.slice(1);
-    const sections = sectionRaws.map(s => parseKeyValue(s));
+    const sections = sectionRaws.map((s) => parseKeyValue(s));
     const stats = header.stat ? (Array.isArray(header.stat) ? header.stat : [header.stat]) : [];
 
     const headingParts = (header.heading || '').split(' ');
@@ -234,19 +240,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function buildSectionText(section, rawBlock) {
       let html = '';
 
-      if (section.section_title) html += `<h3 class="about-section-title">${section.section_title}</h3>`;
-      if (section.section_subtitle) html += `<p class="about-coach-title">${section.section_subtitle}</p>`;
-      if (section.section_quote) html += `<blockquote class="about-coach-quote">"${section.section_quote}"</blockquote>`;
+      if (section.section_title)
+        html += `<h3 class="about-section-title">${section.section_title}</h3>`;
+      if (section.section_subtitle)
+        html += `<p class="about-coach-title">${section.section_subtitle}</p>`;
+      if (section.section_quote)
+        html += `<blockquote class="about-coach-quote">"${section.section_quote}"</blockquote>`;
 
       // If we have the raw block, render in order
       if (rawBlock) {
-        const lines = rawBlock.split('\n').filter(l => l.trim());
+        const lines = rawBlock.split('\n').filter((l) => l.trim());
         let bulletBuffer = [];
         function flushBul() {
           if (!bulletBuffer.length) return;
           html += '<ul class="intro-bullets">';
-          bulletBuffer.forEach(b => {
-            const [title, desc] = b.split('|').map(s => s.trim());
+          bulletBuffer.forEach((b) => {
+            const [title, desc] = b.split('|').map((s) => s.trim());
             html += `<li><strong>${title}</strong><span>${desc || ''}</span></li>`;
           });
           html += '</ul>';
@@ -265,13 +274,23 @@ document.addEventListener('DOMContentLoaded', () => {
         flushBul();
       } else {
         // Fallback: old behavior
-        const paragraphs = section.paragraph ? (Array.isArray(section.paragraph) ? section.paragraph : [section.paragraph]) : [];
-        const bullets = section.bullet ? (Array.isArray(section.bullet) ? section.bullet : [section.bullet]) : [];
-        paragraphs.forEach(p => { html += `<p class="about-paragraph">${p}</p>`; });
+        const paragraphs = section.paragraph
+          ? Array.isArray(section.paragraph)
+            ? section.paragraph
+            : [section.paragraph]
+          : [];
+        const bullets = section.bullet
+          ? Array.isArray(section.bullet)
+            ? section.bullet
+            : [section.bullet]
+          : [];
+        paragraphs.forEach((p) => {
+          html += `<p class="about-paragraph">${p}</p>`;
+        });
         if (bullets.length) {
           html += '<ul class="intro-bullets">';
-          bullets.forEach(b => {
-            const [title, desc] = b.split('|').map(s => s.trim());
+          bullets.forEach((b) => {
+            const [title, desc] = b.split('|').map((s) => s.trim());
             html += `<li><strong>${title}</strong><span>${desc || ''}</span></li>`;
           });
           html += '</ul>';
@@ -288,7 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (textOnlyBuffer.length === 0) return '';
       const html = `
         <div class="about-columns">
-          ${textOnlyBuffer.map(s => `<div class="about-column">${buildSectionText(s)}</div>`).join('\n')}
+          ${textOnlyBuffer.map((s) => `<div class="about-column">${buildSectionText(s)}</div>`).join('\n')}
         </div>
       `;
       textOnlyBuffer = [];
@@ -339,14 +358,20 @@ document.addEventListener('DOMContentLoaded', () => {
     const el = document.getElementById('about-content');
     el.innerHTML = `
       <h2 class="about-heading">${rest} <span class="accent">${accent}</span></h2>
-      ${stats.length ? `
+      ${
+        stats.length
+          ? `
         <div class="about-stats">
-          ${stats.map(s => {
-            const [num, label] = s.split('|').map(x => x.trim());
-            return `<div class="stat"><span class="stat-number">${num}</span><span class="stat-label">${label}</span></div>`;
-          }).join('\n')}
+          ${stats
+            .map((s) => {
+              const [num, label] = s.split('|').map((x) => x.trim());
+              return `<div class="stat"><span class="stat-number">${num}</span><span class="stat-label">${label}</span></div>`;
+            })
+            .join('\n')}
         </div>
-      ` : ''}
+      `
+          : ''
+      }
       ${sectionsHtml}
     `;
   }
@@ -356,7 +381,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const raw = await loadContent('training-menu.txt');
     const sections = parseSections(raw);
     const header = parseKeyValue(sections[0]);
-    const cards = sections.slice(1).map(s => parseKeyValue(s));
+    const cards = sections.slice(1).map((s) => parseKeyValue(s));
 
     const headingParts = (header.heading || 'Programs').split(' ');
     const lastWord = headingParts.slice(-1)[0];
@@ -367,19 +392,21 @@ document.addEventListener('DOMContentLoaded', () => {
       <h2 class="section-title">${firstWords ? firstWords + ' ' : ''}<span class="accent">${lastWord}</span></h2>
       <p class="section-subtitle">${header.subtitle || ''}</p>
       <div class="services-grid">
-        ${cards.map((card, i) => {
-          const details = Array.isArray(card.detail) ? card.detail : [card.detail];
-          return `
+        ${cards
+          .map((card, i) => {
+            const details = Array.isArray(card.detail) ? card.detail : [card.detail];
+            return `
             <div class="service-card" data-card-index="${i}">
               <h3>${card.name || ''}</h3>
               <p>${card.description || ''}</p>
               <ul class="service-details">
-                ${details.map(d => `<li>${d}</li>`).join('\n')}
+                ${details.map((d) => `<li>${d}</li>`).join('\n')}
               </ul>
               <span class="service-price">${card.price || ''}</span>
             </div>
           `;
-        }).join('\n')}
+          })
+          .join('\n')}
       </div>
       <div class="service-expanded" id="service-expanded"></div>
     `;
@@ -401,13 +428,15 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         // Remove previous selection
-        cardEls.forEach(c => c.classList.remove('selected'));
+        cardEls.forEach((c) => c.classList.remove('selected'));
         cardEl.classList.add('selected');
         activeIndex = i;
 
         const card = cards[i];
         const expandedDetails = card.expanded_detail
-          ? (Array.isArray(card.expanded_detail) ? card.expanded_detail : [card.expanded_detail])
+          ? Array.isArray(card.expanded_detail)
+            ? card.expanded_detail
+            : [card.expanded_detail]
           : [];
         const imageSrc = card.image || '';
 
@@ -433,19 +462,24 @@ document.addEventListener('DOMContentLoaded', () => {
         expandedEl.innerHTML = `
           <div class="expanded-inner">
             <div class="expanded-image">
-              ${imageSrc
-                ? `<img src="${imageSrc}" alt="${card.name}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\'><span>Photo: ${card.name}</span></div>'">`
-                : `<div class="image-placeholder"><span>Photo: ${card.name}</span></div>`
+              ${
+                imageSrc
+                  ? `<img src="${imageSrc}" alt="${card.name}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\'><span>Photo: ${card.name}</span></div>'">`
+                  : `<div class="image-placeholder"><span>Photo: ${card.name}</span></div>`
               }
             </div>
             <div class="expanded-details">
               <h3>${card.name || ''}</h3>
               <p class="expanded-text">${card.expanded || card.description || ''}</p>
-              ${expandedDetails.length ? `
+              ${
+                expandedDetails.length
+                  ? `
                 <ul class="service-details">
-                  ${expandedDetails.map(d => `<li>${d}</li>`).join('\n')}
+                  ${expandedDetails.map((d) => `<li>${d}</li>`).join('\n')}
                 </ul>
-              ` : ''}
+              `
+                  : ''
+              }
               <span class="service-price">${card.price || ''}</span>
               <a href="#contact" class="btn expanded-cta" data-tab="contact">Get Started</a>
             </div>
@@ -458,7 +492,7 @@ document.addEventListener('DOMContentLoaded', () => {
         expandedEl.classList.add('open');
 
         // Bind CTA buttons inside expanded panel
-        expandedEl.querySelectorAll('[data-tab]').forEach(btn => {
+        expandedEl.querySelectorAll('[data-tab]').forEach((btn) => {
           btn.addEventListener('click', (e) => {
             e.preventDefault();
             switchTab(btn.getAttribute('data-tab'));
@@ -490,30 +524,46 @@ document.addEventListener('DOMContentLoaded', () => {
   async function buildLocationsListHtml(file) {
     const raw = await loadContent(file);
     const data = parseKeyValue(raw);
-    const outdoors = data.outdoor ? (Array.isArray(data.outdoor) ? data.outdoor : [data.outdoor]) : [];
+    const outdoors = data.outdoor
+      ? Array.isArray(data.outdoor)
+        ? data.outdoor
+        : [data.outdoor]
+      : [];
     const indoors = data.indoor ? (Array.isArray(data.indoor) ? data.indoor : [data.indoor]) : [];
 
     return `
       <div class="expanded-section">
         <h3 class="expanded-section-title">${data.heading || 'Locations'}</h3>
-        ${outdoors.length ? `
+        ${
+          outdoors.length
+            ? `
           <h4 class="locations-subheading">${data.outdoor_heading || 'Outdoor'}</h4>
           <div class="locations-list">
-            ${outdoors.map(loc => {
-              const [name, url] = loc.split('|').map(s => s.trim());
-              return `<a href="${url}" class="location-item" target="_blank" rel="noopener">📍 ${name}</a>`;
-            }).join('\n')}
+            ${outdoors
+              .map((loc) => {
+                const [name, url] = loc.split('|').map((s) => s.trim());
+                return `<a href="${url}" class="location-item" target="_blank" rel="noopener">📍 ${name}</a>`;
+              })
+              .join('\n')}
           </div>
-        ` : ''}
-        ${indoors.length ? `
+        `
+            : ''
+        }
+        ${
+          indoors.length
+            ? `
           <h4 class="locations-subheading">${data.indoor_heading || 'Indoor'}</h4>
           <div class="locations-list">
-            ${indoors.map(loc => {
-              const [name, url] = loc.split('|').map(s => s.trim());
-              return `<a href="${url}" class="location-item" target="_blank" rel="noopener">🏠 ${name}</a>`;
-            }).join('\n')}
+            ${indoors
+              .map((loc) => {
+                const [name, url] = loc.split('|').map((s) => s.trim());
+                return `<a href="${url}" class="location-item" target="_blank" rel="noopener">🏠 ${name}</a>`;
+              })
+              .join('\n')}
           </div>
-        ` : ''}
+        `
+            : ''
+        }
       </div>
     `;
   }
@@ -528,15 +578,17 @@ document.addEventListener('DOMContentLoaded', () => {
       <div class="expanded-section">
         <h3 class="expanded-section-title">${data.heading || 'Pricing'}</h3>
         <div class="pricing-cards">
-          ${plans.map(p => {
-            const parts = p.split('|').map(s => s.trim());
-            return `
+          ${plans
+            .map((p) => {
+              const parts = p.split('|').map((s) => s.trim());
+              return `
               <div class="pricing-card">
                 <span class="pricing-frequency">${parts[0]}</span>
                 <span class="pricing-per-class">${parts[1]}</span>
               </div>
             `;
-          }).join('\n')}
+            })
+            .join('\n')}
         </div>
       </div>
     `;
@@ -559,28 +611,36 @@ document.addEventListener('DOMContentLoaded', () => {
               <tr><th>Day</th><th>Time</th></tr>
             </thead>
             <tbody>
-              ${days.map(d => {
-                const [day, time] = d.split('|').map(s => s.trim());
-                return `<tr><td>${day}</td><td>${time}</td></tr>`;
-              }).join('\n')}
+              ${days
+                .map((d) => {
+                  const [day, time] = d.split('|').map((s) => s.trim());
+                  return `<tr><td>${day}</td><td>${time}</td></tr>`;
+                })
+                .join('\n')}
             </tbody>
           </table>
         </div>
-        ${plans.length ? `
+        ${
+          plans.length
+            ? `
           <h4 class="schedule-pricing-heading">${data.pricing_heading || 'Pricing'}</h4>
           <div class="pricing-cards">
-            ${plans.map(p => {
-              const parts = p.split('|').map(s => s.trim());
-              return `
+            ${plans
+              .map((p) => {
+                const parts = p.split('|').map((s) => s.trim());
+                return `
                 <div class="pricing-card">
                   <span class="pricing-frequency">${parts[0]}</span>
                   <span class="pricing-per-class">${parts[1]}</span>
                   <span class="pricing-total">${parts[2]}</span>
                 </div>
               `;
-            }).join('\n')}
+              })
+              .join('\n')}
           </div>
-        ` : ''}
+        `
+            : ''
+        }
         ${data.note ? `<p class="schedule-note">${data.note}</p>` : ''}
       </div>
     `;
@@ -590,9 +650,9 @@ document.addEventListener('DOMContentLoaded', () => {
   async function loadContact() {
     const raw = await loadContent('contact-info.txt');
     const data = parseKeyValue(raw);
-    const options = (data.form_options || '').split('|').map(o => o.trim());
+    const options = (data.form_options || '').split('|').map((o) => o.trim());
     const locations = Array.isArray(data.location) ? data.location : [data.location];
-    const [instaHandle, instaUrl] = (data.instagram || '').split('|').map(s => s.trim());
+    const [instaHandle, instaUrl] = (data.instagram || '').split('|').map((s) => s.trim());
 
     const el = document.getElementById('contact-content');
     el.innerHTML = `
@@ -612,7 +672,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <label for="subject">Subject</label>
             <select id="subject" name="subject" required>
               <option value="" disabled selected>What are you interested in?</option>
-              ${options.map(o => `<option value="${o.toLowerCase()}">${o}</option>`).join('\n')}
+              ${options.map((o) => `<option value="${o.toLowerCase()}">${o}</option>`).join('\n')}
             </select>
           </div>
           <div class="form-group">
@@ -625,7 +685,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <div class="contact-info">
           <div class="info-item">
             <h4>${data.location_label || 'Location'}</h4>
-            ${locations.map(l => `<p>${l}</p>`).join('\n')}
+            ${locations.map((l) => `<p>${l}</p>`).join('\n')}
           </div>
           <div class="info-item">
             <h4>Email</h4>
@@ -650,23 +710,25 @@ document.addEventListener('DOMContentLoaded', () => {
     const raw = await loadContent('athlete-reviews.txt');
     const sections = parseSections(raw);
     const header = parseKeyValue(sections[0]);
-    const reviews = sections.slice(1).map(s => parseKeyValue(s));
+    const reviews = sections.slice(1).map((s) => parseKeyValue(s));
 
     const el = document.getElementById('reviews-content');
     el.innerHTML = `
       <h2 class="section-title">What Our <span class="accent">Athletes</span> Say</h2>
       <p class="section-subtitle">${header.subtitle || ''}</p>
       <div class="reviews-grid">
-        ${reviews.map(r => {
-          const stars = '★'.repeat(parseInt(r.stars) || 5);
-          return `
+        ${reviews
+          .map((r) => {
+            const stars = '★'.repeat(parseInt(r.stars) || 5);
+            return `
             <div class="review-card">
               <div class="review-stars">${stars}</div>
               <p class="review-text">"${r.text || ''}"</p>
               <div class="review-author"><span class="author-name">— ${r.author || ''}</span></div>
             </div>
           `;
-        }).join('\n')}
+          })
+          .join('\n')}
       </div>
       <div class="reviews-cta">
         <p>See all our reviews on</p>
@@ -692,7 +754,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message: document.getElementById('message').value,
       };
 
-      formStatus.textContent = 'Message sent successfully! We\'ll get back to you soon.';
+      formStatus.textContent = "Message sent successfully! We'll get back to you soon.";
       formStatus.className = 'form-status success';
       contactForm.reset();
 
@@ -709,13 +771,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // ========== LOAD EVERYTHING ==========
 
   async function init() {
-    await Promise.all([
-      loadHero(),
-      loadAbout(),
-      loadServices(),
-      loadContact(),
-      loadReviews(),
-    ]);
+    await Promise.all([loadHero(), loadAbout(), loadServices(), loadContact(), loadReviews()]);
     // Re-bind tab triggers after dynamic content is injected
     bindTabTriggers();
 
@@ -726,29 +782,32 @@ document.addEventListener('DOMContentLoaded', () => {
   function initScrollReveal() {
     const revealElements = document.querySelectorAll(
       '.about-section, .service-card, .review-card, .welcome-intro, ' +
-      '.about-stats, .about-heading, .intro-heading, .intro-bullets li, ' +
-      '.intro-highlight, .location-card, .schedule-table, .pricing-cards'
+        '.about-stats, .about-heading, .intro-heading, .intro-bullets li, ' +
+        '.intro-highlight, .location-card, .schedule-table, .pricing-cards'
     );
 
-    revealElements.forEach(el => el.classList.add('reveal'));
+    revealElements.forEach((el) => el.classList.add('reveal'));
 
     // Set stagger index on bullet items
-    document.querySelectorAll('.intro-bullets').forEach(list => {
+    document.querySelectorAll('.intro-bullets').forEach((list) => {
       list.querySelectorAll('li.reveal').forEach((li, i) => {
         li.style.setProperty('--i', i);
       });
     });
 
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.1 });
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('revealed');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
 
-    revealElements.forEach(el => observer.observe(el));
+    revealElements.forEach((el) => observer.observe(el));
   }
 
   initLanguageToggle();

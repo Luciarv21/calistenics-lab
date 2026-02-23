@@ -36,7 +36,9 @@ export default async function loadHero() {
     introHtml += `<p class="intro-subheading">${introData.subheading}</p>`;
   }
   if (introData.paragraph) {
-    const paragraphs = Array.isArray(introData.paragraph) ? introData.paragraph : [introData.paragraph];
+    const paragraphs = Array.isArray(introData.paragraph)
+      ? introData.paragraph
+      : [introData.paragraph];
     paragraphs.forEach((p, i) => {
       introHtml += `<p class="intro-paragraph">${p}</p>`;
       if (i === 1 && introData.highlight) {

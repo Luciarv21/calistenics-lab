@@ -53,10 +53,10 @@ a:hover {
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;   /* Align logo and nav-group to the bottom */
+  align-items: flex-end; /* Align logo and nav-group to the bottom */
   padding: 15px 48px;
-  height: auto;            /* Let it grow with the content */
-  min-height: 140px;       /* Ensure enough space for the stacked items */
+  height: auto; /* Let it grow with the content */
+  min-height: 140px; /* Ensure enough space for the stacked items */
 }
 
 .nav-logo {
@@ -688,7 +688,9 @@ a:hover {
 .service-expanded {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.4s ease, opacity 0.3s ease;
+  transition:
+    max-height 0.4s ease,
+    opacity 0.3s ease;
   opacity: 0;
 }
 
@@ -1169,7 +1171,9 @@ a:hover {
 .reveal {
   opacity: 0;
   transform: translateY(40px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
 }
 
 .reveal.revealed {
@@ -1272,8 +1276,8 @@ a:hover {
   align-items: center;
   gap: 8px;
   font-size: 1.1rem;
-  margin-right: 12px;      /* Slight offset so it's not touching the screen edge */
-  z-index: 10;             /* Stay on top */
+  margin-right: 12px; /* Slight offset so it's not touching the screen edge */
+  z-index: 10; /* Stay on top */
 }
 
 .lang-btn {
@@ -1296,8 +1300,8 @@ a:hover {
 .nav-right-group {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;   /* Stick to the right wall */
+  align-items: flex-end; /* Stick to the right wall */
   justify-content: flex-end;
-  gap: 12px;               /* Space between language toggle and buttons */
-  margin-left: auto;       /* Push the whole group to the right */
+  gap: 12px; /* Space between language toggle and buttons */
+  margin-left: auto; /* Push the whole group to the right */
 }

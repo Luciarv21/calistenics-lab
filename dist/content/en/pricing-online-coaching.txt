@@ -1,0 +1,4 @@
+heading: Pricing
+
+plan: 1-month program | €100
+plan: 3-month program | €250

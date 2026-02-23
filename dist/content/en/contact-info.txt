@@ -1,0 +1,17 @@
+heading: Get in Touch
+subtitle: Ready to start your calisthenics journey? Book a free trial lesson or send us a message!
+
+form_options: Group Training | Personal Training | Online Coaching | Free Trial Lesson | Other
+
+location_label: Training Locations
+location: Amsterdam West
+location: Rembrandtpark
+location: Oosterpark
+location: Osdorp
+location: Duivendrecht
+location: GymOne Amstelveen (indoor)
+
+email: Info@calisthenicszaanstad.nl
+
+social_label: Follow Us
+instagram: @Calibybryy | https://www.instagram.com/calibybryy/

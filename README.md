@@ -5,37 +5,30 @@ A simple, modular website for a calisthenics coach.
 ## Project structure
 
 ```
-├── index.html              # Single page shell (nav, sections, footer)
+├── index.html
+├── vite.config.js
+├── package.json
 ├── css/
 │   ├── main.css            # Entry: imports all CSS modules
-│   ├── base/               # Variables, reset, layout
-│   │   ├── variables.css
-│   │   └── reset.css
-│   ├── components/         # Reusable UI (navbar, buttons, footer)
-│   │   ├── navbar.css
-│   │   ├── buttons.css
-│   │   └── footer.css
-│   ├── sections/           # Page sections (hero, welcome, about, etc.)
-│   │   ├── hero.css
-│   │   ├── welcome.css
-│   │   ├── tabs.css
-│   │   ├── about.css
-│   │   ├── services.css
-│   │   ├── contact.css
-│   │   └── reviews.css
+│   ├── base/
+│   ├── components/
+│   ├── sections/
 │   ├── utilities/
-│   │   └── scroll-reveal.css
-│   └── responsive.css      # Global responsive overrides
+│   └── responsive.css
 ├── js/
-│   ├── main.js             # Entry: bootstraps app (ES module)
-│   ├── state.js            # App state (e.g. current language)
+│   ├── main.js             # Entry: bootstraps app, lazy-loads sections
+│   ├── state.js            # App state (current language)
+│   ├── config.js           # App config (e.g. form endpoint)
+│   ├── i18n/
+│   │   └── strings.js      # UI strings (t, loadUiStrings, applyToDOM)
 │   ├── utils/
-│   │   ├── parse.js        # parseKeyValue, parseSections
-│   │   └── contentLoader.js # loadContent(lang/file)
+│   │   ├── parse.js
+│   │   └── contentLoader.js # loadContent with fallback to en
 │   ├── navigation/
-│   │   ├── tabs.js         # Tab switching, mobile nav
+│   │   ├── tabs.js         # Tab switching, ARIA, onTabSwitch callback
 │   │   └── lang.js         # EN/NL toggle
-│   ├── sections/           # Section content loaders & renderers
+│   ├── sections/
+│   │   ├── registry.js     # Section ids and loaders (single source of truth)
 │   │   ├── hero.js
 │   │   ├── about.js
 │   │   ├── services.js
@@ -43,28 +36,78 @@ A simple, modular website for a calisthenics coach.
 │   │   └── reviews.js
 │   └── ui/
 │       └── scrollReveal.js
-├── content/                # Text content per language
-│   └── en/
-│       └── *.txt
+├── content/
+│   ├── en/
+│   │   ├── ui.json         # Nav and form labels (EN)
+│   │   └── *.txt
+│   └── nl/
+│       └── ui.json         # Nav and form labels (NL); add *.txt for full NL
 └── images/
 ```
 
 ## Running locally
 
-The app uses **ES modules** (`type="module"`). Open the site over HTTP (not `file://`) so modules load correctly:
+**With Vite (recommended):**
 
 ```bash
-# From project root, e.g.:
+npm install
+npm run dev
+```
+
+Then open the URL shown (e.g. `http://localhost:5173`).
+
+**Without Vite:** Use any static server so ES modules and `content/` are served correctly:
+
+```bash
 npx serve .
 # or
 python3 -m http.server 8000
 ```
 
-Then open `http://localhost:3000` (or the port shown).
+Open `http://localhost:3000` (or the port shown). Use `/js/main.js` from the project root (e.g. `http://localhost:3000/`).
+
+## Build
+
+```bash
+npm run build
+```
+
+Output is in `dist/`. Content and images are copied; JS and CSS are bundled and hashed.
+
+```bash
+npm run preview   # Serve dist/ to check the build
+```
+
+## Formatting
+
+The project uses [Prettier](https://prettier.io). Run before committing:
+
+```bash
+npm run format        # Format all files
+npm run format:check # Check without writing
+```
+
+Config: `.prettierrc`; ignore list: `.prettierignore`.
+
+## Config
+
+- **Contact form:** Set `config.formEndpoint` in `js/config.js` to your form backend URL (e.g. Formspree) to send submissions. Leave empty to only log to console.
+
+## i18n
+
+- **UI strings:** Edit `content/en/ui.json` and `content/nl/ui.json` for nav labels, form labels, placeholders, and success message.
+- **Page content:** Use `content/en/*.txt` and add `content/nl/*.txt` for Dutch. If a file is missing for the current language, the app falls back to `content/en/`.
+
+## Adding a new section
+
+1. Add a loader in `js/sections/` (e.g. `faq.js`).
+2. Register it in `js/sections/registry.js`: add to `sectionLoaders` and `sectionOrder`.
+3. Add the section block in `index.html` (tab panel + nav link with `data-tab="faq"` and `data-i18n="nav.faq"`).
+4. Add `nav.faq` to `content/en/ui.json` and `content/nl/ui.json`.
 
 ## Legacy files
 
-After confirming everything works, you can remove the old single-file assets:
+You can remove these after confirming everything works:
 
-- `css/style.css` (replaced by `css/main.css` + modules)
-- `js/app.js` (replaced by `js/main.js` + modules)
+- `css/style.css`
+- `js/app.js`
