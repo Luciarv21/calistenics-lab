@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/calistenicsLab.iml" filepath="$PROJECT_DIR$/.idea/calistenicsLab.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/calistenics-lab.iml" filepath="$PROJECT_DIR$/.idea/calistenics-lab.iml" />
     </modules>
   </component>
 </project>

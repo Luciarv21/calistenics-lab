@@ -1,0 +1,19 @@
+/**
+ * Main stylesheet — imports all modules in logical order.
+ * Variables and reset first, then layout/components, sections, utilities, responsive.
+ */
+
+@import 'base/variables.css';
+@import 'base/reset.css';
+@import 'components/navbar.css';
+@import 'components/buttons.css';
+@import 'components/footer.css';
+@import 'sections/hero.css';
+@import 'sections/welcome.css';
+@import 'sections/tabs.css';
+@import 'sections/about.css';
+@import 'sections/services.css';
+@import 'sections/contact.css';
+@import 'sections/reviews.css';
+@import 'utilities/scroll-reveal.css';
+@import 'responsive.css';

@@ -1,0 +1,73 @@
+/* Global responsive overrides */
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 12px 20px;
+  }
+
+  .nav-toggle {
+    display: flex;
+  }
+
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.98);
+    padding: 16px;
+    gap: 4px;
+    border-bottom: 1px solid var(--mid-gray);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: 12px 16px;
+  }
+
+  .about-section,
+  .about-section.image-right {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .about-section.image-right .about-section-image,
+  .about-section.image-right .about-section-text {
+    order: unset;
+  }
+
+  .about-section-image {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  .about-columns {
+    grid-template-columns: 1fr;
+  }
+
+  .about-stats {
+    justify-content: center;
+    gap: 32px;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-info {
+    order: -1;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,14 @@
+/* Design tokens and theme variables */
+
+:root {
+  --black: #000000;
+  --dark: #0a0a0a;
+  --dark-gray: #1a1a1a;
+  --mid-gray: #2a2a2a;
+  --light-gray: #b0b0b0;
+  --white: #ffffff;
+  --emerald: #047857;
+  --emerald-light: #059669;
+  --emerald-glow: #10b981;
+  --font-main: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

@@ -1,0 +1,153 @@
+/* Welcome intro block and shared bullets */
+
+.welcome-intro {
+  position: relative;
+  padding: 80px 0 60px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: 8%;
+}
+
+.welcome-intro::before {
+  content: '';
+  position: absolute;
+  left: -60px;
+  top: 50%;
+  transform: translateX(-100%) translateY(-50%);
+  width: 30vw;
+  height: 70%;
+  background: url('../../images/why_calistenics_skill_lab.JPG') center / cover no-repeat;
+  mask-image: linear-gradient(to left, transparent 0%, black 30%);
+  -webkit-mask-image: linear-gradient(to left, transparent 0%, black 30%);
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.intro-heading {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 800;
+  text-align: center;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.intro-subheading {
+  text-align: center;
+  font-size: 1.1rem;
+  color: var(--emerald-glow);
+  font-weight: 500;
+  letter-spacing: 1px;
+  margin-bottom: 40px;
+}
+
+.intro-paragraph {
+  color: var(--light-gray);
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.intro-highlight {
+  margin: 36px 0;
+  padding: 24px 32px;
+  border-left: 4px solid var(--emerald);
+  background-color: var(--dark-gray);
+  border-radius: 0 8px 8px 0;
+}
+
+.intro-highlight p {
+  color: var(--white);
+  font-size: 1.2rem;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.5px;
+}
+
+.intro-heading2 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: var(--emerald-glow);
+  text-align: center;
+  margin-top: 40px;
+  margin-bottom: 16px;
+}
+
+.intro-bullets {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+  counter-reset: bullet-counter;
+}
+
+.intro-bullets li {
+  counter-increment: bullet-counter;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 32px 24px 28px;
+  background: linear-gradient(160deg, var(--dark-gray) 0%, rgba(4, 120, 87, 0.08) 100%);
+  border: 1px solid var(--mid-gray);
+  border-radius: 14px;
+  transition: all 0.4s ease;
+  text-align: center;
+  overflow: hidden;
+}
+
+.intro-bullets li::before {
+  content: counter(bullet-counter, decimal-leading-zero);
+  font-size: 3rem;
+  font-weight: 900;
+  color: rgba(16, 185, 129, 0.35);
+  line-height: 1;
+  margin-bottom: 4px;
+  transition: color 0.4s ease;
+}
+
+.intro-bullets li::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--emerald), var(--emerald-glow));
+  transform: scaleX(0);
+  transition: transform 0.4s ease;
+}
+
+.intro-bullets li:hover {
+  border-color: var(--emerald);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 32px rgba(4, 120, 87, 0.2);
+}
+
+.intro-bullets li:hover::before {
+  color: rgba(16, 185, 129, 0.55);
+}
+
+.intro-bullets li:hover::after {
+  transform: scaleX(1);
+}
+
+.intro-bullets li strong {
+  color: var(--white);
+  font-size: 1.15rem;
+  letter-spacing: 0.3px;
+}
+
+.intro-bullets li span {
+  color: var(--light-gray);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 768px) {
+  .intro-bullets {
+    grid-template-columns: 1fr;
+  }
+}

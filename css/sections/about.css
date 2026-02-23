@@ -1,0 +1,188 @@
+/* About section: coach, stats, columns, CTA */
+
+.about-heading {
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 800;
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 16px;
+}
+
+.about-section {
+  display: grid;
+  grid-template-columns: 1.2fr 1.5fr;
+  gap: 48px;
+  align-items: start;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.about-section:last-child {
+  border-bottom: none;
+}
+
+.about-section.image-right {
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.about-section.image-right .about-section-image {
+  order: 2;
+}
+
+.about-section.image-right .about-section-text {
+  order: 1;
+}
+
+.about-section-stacked {
+  padding: 80px 0;
+  border-bottom: 1px solid var(--mid-gray);
+  text-align: center;
+}
+
+.about-section-stacked .about-section-text {
+  max-width: 800px;
+  margin: 0 auto 40px;
+}
+
+.about-section-image-stacked {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.about-section-image-stacked img {
+  width: 100%;
+  max-height: 600px;
+  object-fit: cover;
+  border-radius: 12px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 75% at center, black 40%, transparent 85%);
+  mask-image: radial-gradient(ellipse 80% 75% at center, black 40%, transparent 85%);
+}
+
+.about-section-image {
+  align-self: stretch;
+}
+
+.about-section-image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  -webkit-mask-image: radial-gradient(ellipse 90% 85% at center, black 60%, transparent 95%);
+  mask-image: radial-gradient(ellipse 90% 85% at center, black 60%, transparent 95%);
+}
+
+.image-placeholder {
+  width: 100%;
+  aspect-ratio: 4/5;
+  background-color: var(--mid-gray);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light-gray);
+  font-size: 1.1rem;
+  border: 2px dashed var(--emerald);
+}
+
+.about-section-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--white);
+  margin-bottom: 8px;
+}
+
+.about-coach-title {
+  color: var(--emerald-glow);
+  font-size: 1rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  margin-bottom: 12px;
+}
+
+.about-coach-quote {
+  color: var(--light-gray);
+  font-style: italic;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  padding: 16px 24px;
+  border-left: 3px solid var(--emerald);
+  background-color: var(--dark-gray);
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 28px;
+}
+
+.about-paragraph {
+  color: var(--light-gray);
+  margin-bottom: 16px;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.about-section-text .intro-bullets {
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.about-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  padding: 80px 0;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.about-column {
+  padding: 32px;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--mid-gray);
+  border-radius: 12px;
+}
+
+.about-column:hover {
+  border-color: var(--emerald);
+}
+
+.about-cta {
+  margin-top: 80px;
+  margin-bottom: 80px;
+  text-align: center;
+  padding: 40px;
+  background-color: var(--dark-gray);
+  border: 1px solid var(--emerald);
+  border-radius: 12px;
+}
+
+.about-cta-text {
+  color: var(--white);
+  font-size: 1.3rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.about-stats {
+  display: flex;
+  justify-content: center;
+  gap: 48px;
+  margin-top: 20px;
+  padding: 40px 0;
+  border-bottom: 1px solid var(--mid-gray);
+}
+
+.stat {
+  text-align: center;
+}
+
+.stat-number {
+  display: block;
+  font-size: 2rem;
+  font-weight: 800;
+  color: var(--emerald-glow);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: var(--light-gray);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
