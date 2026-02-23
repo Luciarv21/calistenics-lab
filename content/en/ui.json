@@ -1,0 +1,25 @@
+{
+  "nav": {
+    "welcome": "Welcome",
+    "about": "About",
+    "services": "Programs",
+    "contact": "Contact",
+    "reviews": "Reviews"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "subject": "Subject",
+    "message": "Message",
+    "subjectPlaceholder": "What are you interested in?",
+    "namePlaceholder": "Your name",
+    "emailPlaceholder": "your@email.com",
+    "messagePlaceholder": "Tell us about your goals...",
+    "submit": "Send Message",
+    "success": "Message sent successfully! We'll get back to you soon."
+  },
+  "contact": {
+    "locationLabel": "Location",
+    "socialLabel": "Follow Us"
+  }
+}

@@ -1,0 +1,49 @@
+heading: Programs
+subtitle: Choose the program that fits your goals
+
+---
+name: Semi-Private Training
+description: Train with the focus of personal training, but the energy of a small group.
+detail: Motivation through a small community
+detail: Personalized training program included
+detail: All levels welcome
+detail: Fixed schedule and location
+price: From €120/month
+
+image: images/semi-private-training.jpeg
+expanded: Train together at our dedicated calisthenics park in Amsterdam West. These sessions offer the perfect balance between personal attention and the motivation of a small, dedicated community.
+expanded_detail: Every member receives their own customized training program.
+expanded_detail:  Sessions are held on a fixed schedule.
+include_location: true
+include_schedule: true
+
+---
+name: Personal Training
+description: Private sessions for maximum results and total flexibility.
+detail: Fully dedicated one-on-one sessions
+detail: Personalized training program included
+detail: All levels welcome
+detail: Flexible schedule and location
+price: From €50/session
+
+image: images/personal_training.PNG
+expanded: One-on-one training sessions tailored entirely to your specific goals, level, and injury history. <br> Whether you want to nail your first pull-up or master the human flag, every session is built around you. This is the fastest path to results. Choose your preferred location and timeslot across Amsterdam.
+location_file: location-personal-training.txt
+pricing_file: pricing-personal-training.txt
+
+---
+name: Online Coaching
+description: Expert guidance and custom programming, wherever you are.
+detail: Remote guidance & check-ins
+detail: 1-month or 3-month programs
+detail: All levels welcome
+detail: Train on your own schedule
+price: From €100/month
+
+image: images/online_coaching.jpg
+expanded: Structured training plans that you can follow anywhere. <br> You get the same elite programming as our in-person athletes, with remote guidance to keep you on track. It includes:
+expanded_detail: Regular check-ins
+expanded_detail: Video feedback on your form
+expanded_detail: Program adjustments based on your progress.
+
+pricing_file: pricing-online-coaching.txt

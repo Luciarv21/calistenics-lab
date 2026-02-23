@@ -7,9 +7,12 @@ import { parseKeyValue, parseSections } from '../utils/parse.js';
 
 function buildSectionText(section, rawBlock) {
   let html = '';
-  if (section.section_title) html += `<h3 class="about-section-title">${section.section_title}</h3>`;
-  if (section.section_subtitle) html += `<p class="about-coach-title">${section.section_subtitle}</p>`;
-  if (section.section_quote) html += `<blockquote class="about-coach-quote">"${section.section_quote}"</blockquote>`;
+  if (section.section_title)
+    html += `<h3 class="about-section-title">${section.section_title}</h3>`;
+  if (section.section_subtitle)
+    html += `<p class="about-coach-title">${section.section_subtitle}</p>`;
+  if (section.section_quote)
+    html += `<blockquote class="about-coach-quote">"${section.section_quote}"</blockquote>`;
 
   if (rawBlock) {
     const lines = rawBlock.split('\n').filter((l) => l.trim());
@@ -37,10 +40,14 @@ function buildSectionText(section, rawBlock) {
     flushBul();
   } else {
     const paragraphs = section.paragraph
-      ? Array.isArray(section.paragraph) ? section.paragraph : [section.paragraph]
+      ? Array.isArray(section.paragraph)
+        ? section.paragraph
+        : [section.paragraph]
       : [];
     const bullets = section.bullet
-      ? Array.isArray(section.bullet) ? section.bullet : [section.bullet]
+      ? Array.isArray(section.bullet)
+        ? section.bullet
+        : [section.bullet]
       : [];
     paragraphs.forEach((p) => {
       html += `<p class="about-paragraph">${p}</p>`;
@@ -128,7 +135,9 @@ export default async function loadAbout() {
   if (!el) return;
   el.innerHTML = `
     <h2 class="about-heading">${rest} <span class="accent">${accent}</span></h2>
-    ${stats.length ? `
+    ${
+      stats.length
+        ? `
       <div class="about-stats">
         ${stats
           .map((s) => {
@@ -137,7 +146,9 @@ export default async function loadAbout() {
           })
           .join('\n')}
       </div>
-    ` : ''}
+    `
+        : ''
+    }
     ${sectionsHtml}
   `;
 }

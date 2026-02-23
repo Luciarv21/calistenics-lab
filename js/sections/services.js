@@ -23,12 +23,18 @@ async function buildLocationHtml() {
 async function buildLocationsListHtml(file) {
   const raw = await loadContent(file);
   const data = parseKeyValue(raw);
-  const outdoors = data.outdoor ? (Array.isArray(data.outdoor) ? data.outdoor : [data.outdoor]) : [];
+  const outdoors = data.outdoor
+    ? Array.isArray(data.outdoor)
+      ? data.outdoor
+      : [data.outdoor]
+    : [];
   const indoors = data.indoor ? (Array.isArray(data.indoor) ? data.indoor : [data.indoor]) : [];
   return `
     <div class="expanded-section">
       <h3 class="expanded-section-title">${data.heading || 'Locations'}</h3>
-      ${outdoors.length ? `
+      ${
+        outdoors.length
+          ? `
         <h4 class="locations-subheading">${data.outdoor_heading || 'Outdoor'}</h4>
         <div class="locations-list">
           ${outdoors
@@ -38,8 +44,12 @@ async function buildLocationsListHtml(file) {
             })
             .join('\n')}
         </div>
-      ` : ''}
-      ${indoors.length ? `
+      `
+          : ''
+      }
+      ${
+        indoors.length
+          ? `
         <h4 class="locations-subheading">${data.indoor_heading || 'Indoor'}</h4>
         <div class="locations-list">
           ${indoors
@@ -49,7 +59,9 @@ async function buildLocationsListHtml(file) {
             })
             .join('\n')}
         </div>
-      ` : ''}
+      `
+          : ''
+      }
     </div>
   `;
 }
@@ -102,7 +114,9 @@ async function buildScheduleHtml() {
           </tbody>
         </table>
       </div>
-      ${plans.length ? `
+      ${
+        plans.length
+          ? `
         <h4 class="schedule-pricing-heading">${data.pricing_heading || 'Pricing'}</h4>
         <div class="pricing-cards">
           ${plans
@@ -118,7 +132,9 @@ async function buildScheduleHtml() {
             })
             .join('\n')}
         </div>
-      ` : ''}
+      `
+          : ''
+      }
       ${data.note ? `<p class="schedule-note">${data.note}</p>` : ''}
     </div>
   `;
@@ -180,7 +196,9 @@ export default async function loadServices() {
 
       const card = cards[i];
       const expandedDetails = card.expanded_detail
-        ? Array.isArray(card.expanded_detail) ? card.expanded_detail : [card.expanded_detail]
+        ? Array.isArray(card.expanded_detail)
+          ? card.expanded_detail
+          : [card.expanded_detail]
         : [];
       const imageSrc = card.image || '';
 
@@ -197,19 +215,24 @@ export default async function loadServices() {
       expandedEl.innerHTML = `
         <div class="expanded-inner">
           <div class="expanded-image">
-            ${imageSrc
-              ? `<img src="${imageSrc}" alt="${card.name}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\'><span>Photo: ${card.name}</span></div>'">`
-              : `<div class="image-placeholder"><span>Photo: ${card.name}</span></div>`
+            ${
+              imageSrc
+                ? `<img src="${imageSrc}" alt="${card.name}" onerror="this.parentElement.innerHTML='<div class=\\'image-placeholder\\'><span>Photo: ${card.name}</span></div>'">`
+                : `<div class="image-placeholder"><span>Photo: ${card.name}</span></div>`
             }
           </div>
           <div class="expanded-details">
             <h3>${card.name || ''}</h3>
             <p class="expanded-text">${card.expanded || card.description || ''}</p>
-            ${expandedDetails.length ? `
+            ${
+              expandedDetails.length
+                ? `
               <ul class="service-details">
                 ${expandedDetails.map((d) => `<li>${d}</li>`).join('\n')}
               </ul>
-            ` : ''}
+            `
+                : ''
+            }
             <span class="service-price">${card.price || ''}</span>
             <a href="#contact" class="btn expanded-cta" data-tab="contact">Get Started</a>
           </div>
