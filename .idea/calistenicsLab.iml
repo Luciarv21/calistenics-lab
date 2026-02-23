@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="WEB_MODULE" version="4">
+  <component name="NewModuleRootManager">
+    <content url="file://$USER_HOME$/calistenicsLab">
+      <excludeFolder url="file://$USER_HOME$/calistenicsLab/.tmp" />
+      <excludeFolder url="file://$USER_HOME$/calistenicsLab/temp" />
+      <excludeFolder url="file://$USER_HOME$/calistenicsLab/tmp" />
+    </content>
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+  </component>
+</module>

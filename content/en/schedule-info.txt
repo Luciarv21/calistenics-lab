@@ -1,0 +1,14 @@
+heading: Schedule
+subtitle: Semi-Private Training sessions
+
+day: Monday | 7:00 AM — 8:00 AM
+day: Tuesday | 5:00 PM — 6:00 PM
+day: Wednesday | 7:00 AM — 8:00 AM
+day: Friday | 5:00 PM — 6:00 PM
+
+pricing_heading: Pricing
+
+plan: 1x per week | €30 per class | €120/month
+plan: 2x per week | €20 per class | €160/month
+
+note: Semi-Private Training groups are paid monthly.

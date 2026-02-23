@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calisthenics Skill Lab Amsterdam</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <nav class="navbar">
+  <div class="nav-logo">
+    <img src="images/logo.jpeg" alt="Calisthenics Skill Lab" class="logo-img">
+  </div>
+
+  <div class="nav-right-group">
+    <div class="lang-switch">
+      <button id="lang-en" class="lang-btn active">EN</button>
+      <span class="separator">|</span>
+      <button id="lang-nl" class="lang-btn">NL</button>
+    </div>
+
+    <ul class="nav-links">
+      <li><a href="#welcome" class="nav-link active" data-tab="welcome">Welcome</a></li>
+      <li><a href="#about" class="nav-link" data-tab="about">About</a></li>
+      <li><a href="#services" class="nav-link" data-tab="services">Programs</a></li>
+      <li><a href="#contact" class="nav-link" data-tab="contact">Contact</a></li>
+      <li><a href="#reviews" class="nav-link" data-tab="reviews">Reviews</a></li>
+    </ul>
+  </div>
+
+  <button class="nav-toggle" aria-label="Toggle menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+  <!-- Welcome Section -->
+  <section id="welcome" class="tab-content active">
+    <div class="hero">
+      <div class="hero-overlay"></div>
+      <div id="hero-content" class="hero-content"></div>
+    </div>
+    <div class="container">
+      <div id="welcome-intro" class="welcome-intro"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="tab-content">
+    <div id="about-content" class="container"></div>
+  </section>
+
+  <!-- Services / Training Section -->
+  <section id="services" class="tab-content">
+    <div id="services-content" class="container"></div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="tab-content">
+    <div id="contact-content" class="container"></div>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="tab-content">
+    <div id="reviews-content" class="container"></div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Calisthenics Skill Lab Amsterdam. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
