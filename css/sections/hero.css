@@ -6,7 +6,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: left;
   background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 50%, var(--emerald) 150%);
   overflow: hidden;
 }

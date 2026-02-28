@@ -9,7 +9,7 @@
   --emerald: #047857;
   --emerald-light: #059669;
   --emerald-glow: #10b981;
-  --font-main: 'Montserrat', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  --font-main: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 /* ========== RESET & BASE ========== */
@@ -19,6 +19,13 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+input,
+textarea,
+select,
+button {
+  font: inherit;
 }
 
 html {
@@ -171,7 +178,7 @@ a:hover {
   position: relative;
   z-index: 1;
   padding: 0 24px;
-  text-align: left;
+  text-align: center;
   margin-right: auto;
   margin-left: 8%;
 }
@@ -903,7 +910,7 @@ a:hover {
 }
 
 .schedule-table th {
-  text-align: left;
+  text-align: center;
   padding: 12px 20px;
   color: var(--emerald-glow);
   font-size: 0.9rem;

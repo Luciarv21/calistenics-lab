@@ -2,4 +2,4 @@ heading: Pricing
 
 plan: 3x per week | €50 per session
 plan: 2x per week | €55 per session
-plan: 1x per week | €60 per session
+plan: 1x per week | €66 per session

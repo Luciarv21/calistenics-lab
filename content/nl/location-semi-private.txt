@@ -1,0 +1,4 @@
+heading: Trainingslocatie
+
+outdoor_heading: Buitenlocatie
+outdoor: Calisthenicspark Amsterdam-West | https://maps.app.goo.gl/VUMMbbNm3fc2AYwP9

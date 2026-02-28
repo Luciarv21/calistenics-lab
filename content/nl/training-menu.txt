@@ -1,0 +1,79 @@
+heading: Programma's
+subtitle: Kies het programma dat bij jouw doelen past
+
+---
+name: Groepslessen
+description: Energieke calisthenics sessies in een motiverende community.
+detail: Gezellige, motiverende groepstraining
+detail: Focus op full-body kracht, conditie en skills
+detail: Geschikt voor alle niveaus
+detail: Vast rooster en vaste locatie
+price: Vanaf €9/sessie
+
+image: images/a_new_vision_for_amsterdam.jpeg
+expanded: Train samen in een open groep waar we werken aan de basis van calisthenics: kracht, coördinatie, mobiliteit, controle en skills. Ideaal als je structuur, coaching en een sterke community in één training wilt.
+expanded_detail: <strong>Energie & Community</strong>: Train met een gelijkgestemde groep die je gemotiveerd houdt
+expanded_detail: <strong>Progressies voor beginners en gevorderde atleten</strong>
+expanded_detail: <strong>Master the Basics</strong>: Focus op full-body kracht, conditie en fundamentele skills
+expanded_detail: <strong>Schaalbaar voor iedereen</strong>: Elke oefening wordt aangepast aan jouw niveau
+expanded_detail: <strong>Vast rooster</strong>: Sluit aan bij onze vaste buitensessies op vaste locaties
+location_file: location-group-training.txt
+schedule_file: schedule-group-training.txt
+pricing_file: pricing-group-training.txt
+
+---
+name: Semi-Private Training
+description: De precisie van personal training met de gedeelde energie van een kleine groep (max. 5).
+detail: Motivatie vanuit een hechte community
+detail: Gepersonaliseerd trainingsprogramma inbegrepen
+detail: Geschikt voor alle niveaus
+detail: Nog meer individuele aandacht dan in de groepslessen
+price: Vanaf €120/maand
+
+image: images/semi-private-training.jpeg
+expanded: Train bij ons calisthenicspark in Amsterdam-West. Deze sessies bieden de perfecte balans tussen persoonlijke aandacht op hoog niveau en de motivatie van trainen naast een kleine, toegewijde groep. Anders dan een standaard groepsles werk je specifiek aan jouw eigen doelen binnen een professionele, gefocuste omgeving.
+expanded_detail: <strong>Gepersonaliseerde Programmering</strong>: Elke deelnemer krijgt een volledig op maat gemaakt trainingsprogramma afgestemd op persoonlijke doelen
+expanded_detail: <strong>Gerichte Coaching</strong>: Profiteer van de individuele aandacht die nodig is om complexe skills veilig en effectief te beheersen
+expanded_detail: <strong>Gedeelde Motivatie</strong>: Train met een kleine groep gelijkgestemde atleten terwijl je je eigen persoonlijke routekaart volgt
+expanded_detail: <strong>Doelgerichte Sessies</strong>: Elke training is specifiek ontworpen om je persoonlijke progressie te volgen en te waarborgen
+expanded_detail: <strong>Schaalbaar voor iedereen</strong>: Of je nu werkt aan je eerste pull-up of een gevorderde skill, je traint op jouw eigen niveau
+location_file: location-semi-private.txt
+schedule_file: schedule-semi-private.txt
+pricing_file: pricing-semi-private.txt
+
+---
+name: Personal Training
+description: 1-op-1 sessies voor maximale resultaten, totale focus en volledige flexibiliteit.
+detail: Volledig toegewijde één-op-één sessies
+detail: Gepersonaliseerd trainingsprogramma inbegrepen
+detail: Geschikt voor alle niveaus
+detail: Flexibele planning en locatie
+price: Vanaf €50/sessie
+
+image: images/personal_training.PNG
+expanded: Ervaar de meest directe weg naar topprestaties. Of je nu je eerste pull-up wilt halen, de Human Flag wilt beheersen of een onverwoestbaar lichaam wilt opbouwen — elke sessie is 100% aan jou gewijd. We houden rekening met je huidige niveau en blessuregeschiedenis om een veilig, impactvol traject naar succes op te bouwen.
+expanded_detail: <strong>100% Toegewijd</strong>: Pure één-op-één coaching om je vooruitgang te versnellen
+expanded_detail: <strong>Op Maat Gemaakte Strategie</strong>: Een volledig gepersonaliseerd programma ontworpen voor jouw lichaam en doelen
+expanded_detail: <strong>Technisch Meesterschap</strong>: Diepgaande aandacht voor techniek om veilige en snelle evolutie te garanderen
+expanded_detail: <strong>Ultieme Flexibiliteit</strong>: Train op een moment en locatie die bij jouw levensstijl past
+location_file: location-personal-training.txt
+pricing_file: pricing-personal-training.txt
+
+---
+name: Online Coaching
+description: Professionele begeleiding en op maat gemaakte programmering, waar en wanneer je ook traint.
+detail: Online begeleiding & check-ins
+detail: Programma's van 1 of 3 maanden
+detail: Geschikt voor alle niveaus
+detail: Train op je eigen moment
+price: Vanaf €100/maand
+
+image: images/online_coaching.jpg
+expanded: Ontvang dezelfde elite programmering als onze atleten op locatie, ontworpen voor jouw omgeving en schema. Of je nu thuis traint, in een lokaal park of bij een sportschool — je hebt een professionele routekaart en een coach in je broekzak zodat je nooit een plateau bereikt.
+expanded_detail: <strong>Op Maat Gemaakte Trainingsroutekaart</strong>: Een volledig gepersonaliseerd programma van 1 of 3 maanden afgestemd op jouw specifieke doelen en uitrusting
+expanded_detail: <strong>Video Techniekanalyse</strong>: Stuur video's van je sets voor gedetailleerde technische feedback, zodat elke rep veilig en effectief wordt uitgevoerd
+expanded_detail: <strong>Elite Programmering</strong>: Profiteer van dezelfde bewezen methodieken als bij het Amsterdam SkillLab, aangepast voor training op afstand
+expanded_detail: <strong>Pro-Actieve Verantwoording</strong>: Regelmatige digitale check-ins om je voortgang te volgen, je plan aan te passen en je motivatie hoog te houden
+expanded_detail: <strong>Totale Trainingsflexibiliteit</strong>: De perfecte oplossing voor wie een druk leven heeft en professionele resultaten wil op eigen voorwaarden
+
+pricing_file: pricing-online-coaching.txt

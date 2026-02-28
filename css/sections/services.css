@@ -260,7 +260,7 @@
 }
 
 .schedule-table th {
-  text-align: left;
+  text-align: center;
   padding: 12px 20px;
   color: var(--emerald-glow);
   font-size: 0.9rem;

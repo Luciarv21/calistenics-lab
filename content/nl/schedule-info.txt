@@ -1,0 +1,15 @@
+heading: Rooster
+subtitle: Semi-Private Training sessies
+
+day: maandag | 7:00 — 8:00
+day: dinsdag | 17:00 — 18:00
+day: woensdag | 7:00 — 8:00
+day: vrijdag | 17:00 — 18:00
+
+pricing_heading: Tarieven
+
+plan: 1x per week | €30 per sessie | €120/maand
+plan: 2x per week | €20 per sessie | €160/maand
+
+note: Semi-Private Training groepen worden maandelijks afgerekend.
+

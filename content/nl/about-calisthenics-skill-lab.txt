@@ -1,0 +1,37 @@
+heading: Over Calisthenics SkillLab Amsterdam
+
+stat: 100+ | Begeleide atleten
+stat: 3+ | Jaar ervaring
+stat: AMS | Gebaseerd in Amsterdam
+
+---
+section_title: Maak kennis met coach Bryan
+section_subtitle: Oprichter van Calisthenics SkillLab Amsterdam
+section_quote: Van deelnemen aan de Nederlandse Kampioenschappen tot jou coachen naar je eerste Muscle-up.
+section_image: images/meet_coach_bryan.jpg
+paragraph: Mijn naam is Bryan en al meer dan zeven jaar staat calisthenics centraal in mijn leven. Wat begon als een persoonlijke passie, groeide in april 2023 uit tot mijn fulltime missie toen ik Calisthenics Zaanstad oprichtte. Na jaren een sterke community te hebben opgebouwd, markeerde mijn verhuizing naar Amsterdam in februari 2026 het begin van een nieuw hoofdstuk: <strong>Calisthenics SkillLab Amsterdam</strong>.
+
+---
+layout: stacked
+section_title: Ervaring die resultaat oplevert
+section_image: images/experience_meets_results.jpg
+paragraph: Ik geef de sport niet alleen les, ik leef haar. In 2022 en 2024 deed ik mee aan de <strong>Nederlandse Calisthenics Kampioenschappen (NK)</strong>, waar ik mijn skills testte tegenover de beste atleten van het land. Deze ervaringen scherpten mijn technische kennis en versterkten mijn drive om anderen te helpen door hun eigen fysieke barrières heen te breken.
+
+---
+section_title: Waar Community en Meesterschap samenkomen
+section_image: images/a_new_vision_for_amsterdam.jpeg
+paragraph: Het Amsterdamse SkillLab bouwt voort op het fundament van Calisthenics Zaanstad en is ontworpen voor iedereen die een energieke community wil combineren met coaching op topniveau.
+paragraph: In Amsterdam bieden we het beste van twee werelden. Je kunt deelnemen aan onze levendige groepslessen om te werken aan je algemene fitheid en skills samen met anderen, of kiezen voor onze Private en Semi-Private sessies voor een meer gerichte en persoonlijke ervaring. Zo kunnen we elke atleet het juiste niveau van begeleiding bieden — of je nu floreert op de energie van de groep of op zoek bent naar een professioneel, op maat gemaakt plan om specifieke high-level skills te ontgrendelen. Bij het SkillLab wordt je vooruitgang nauwkeurig gevolgd, zodat je effectief groeit in je eigen tempo.
+heading2: De beste trainingsplekken van de stad
+paragraph: We trainen op de meest inspirerende outdoor spots van Amsterdam. Of we nu aan je skills werken in Rembrandtpark of Oosterpark, of bij het calisthenicspark bij Sloterplas voor onze Semi-Private sessies & groepslessen, de stad is onze gym.
+paragraph: Mijn doel is om je meer te laten opbouwen dan alleen spiermassa. We richten ons op:
+bullet: Meesterlijke Skills | Handstands, Muscle-ups en Levers
+bullet: Betere houding & mobiliteit | Beweeg vrijer, voel je beter
+bullet: Zelfvertrouwen opbouwen | Balans, coördinatie en mentale kracht
+paragraph: Of je nu een complete beginner bent of een gevorderde atleet die een voorsprong zoekt: ik bied de structuur en coaching die je nodig hebt om je doelen te bereiken.
+
+---
+layout: cta
+cta_text: Klaar om naar het volgende niveau te gaan?
+cta_button: Plan je intake met Bryan
+cta_tab: contact

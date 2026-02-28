@@ -449,8 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (card.include_location === 'true') {
           locationHtml = await buildLocationHtml();
         }
-        if (card.include_schedule === 'true') {
-          scheduleHtml = await buildScheduleHtml();
+        if (card.schedule_file) {
+          scheduleHtml = await buildScheduleHtml(card.schedule_file);
         }
         if (card.location_file) {
           locationsListHtml = await buildLocationsListHtml(card.location_file);
@@ -585,18 +585,20 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="pricing-card">
                 <span class="pricing-frequency">${parts[0]}</span>
                 <span class="pricing-per-class">${parts[1]}</span>
+                ${parts[2] ? `<span class="pricing-total">${parts[2]}</span>` : ''}
               </div>
             `;
             })
             .join('\n')}
         </div>
+        ${data.note ? `<p class="schedule-note">${data.note}</p>` : ''}
       </div>
     `;
   }
 
   // ---- Schedule HTML builder ----
-  async function buildScheduleHtml() {
-    const raw = await loadContent('schedule-info.txt');
+  async function buildScheduleHtml(file) {
+    const raw = await loadContent(file);
     const data = parseKeyValue(raw);
     const days = data.day ? (Array.isArray(data.day) ? data.day : [data.day]) : [];
     const plans = data.plan ? (Array.isArray(data.plan) ? data.plan : [data.plan]) : [];

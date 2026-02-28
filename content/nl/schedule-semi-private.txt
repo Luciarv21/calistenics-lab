@@ -1,0 +1,6 @@
+heading: Rooster
+subtitle: Semi-Private Training sessies
+
+day: maandag | 7:00 — 8:00
+day: woensdag | 17:00 — 18:00
+day: vrijdag | 7:00 — 8:00

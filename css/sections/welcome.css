@@ -27,13 +27,13 @@
 .intro-heading {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   font-weight: 800;
-  text-align: center;
+  text-align: left;
   color: var(--white);
   margin-bottom: 8px;
 }
 
 .intro-subheading {
-  text-align: center;
+  text-align: left;
   font-size: 1.1rem;
   color: var(--emerald-glow);
   font-weight: 500;
@@ -46,7 +46,7 @@
   font-size: 1.05rem;
   line-height: 1.8;
   margin-bottom: 20px;
-  text-align: center;
+  text-align: left;
 }
 
 .intro-highlight {
@@ -61,7 +61,7 @@
   color: var(--white);
   font-size: 1.2rem;
   font-weight: 700;
-  text-align: center;
+  text-align: left;
   letter-spacing: 0.5px;
 }
 
@@ -69,7 +69,7 @@
   font-size: clamp(1.4rem, 3vw, 1.8rem);
   font-weight: 700;
   color: var(--emerald-glow);
-  text-align: center;
+  text-align: left;
   margin-top: 40px;
   margin-bottom: 16px;
 }
@@ -94,7 +94,7 @@
   border: 1px solid var(--mid-gray);
   border-radius: 14px;
   transition: all 0.4s ease;
-  text-align: center;
+  text-align: left;
   overflow: hidden;
 }
 

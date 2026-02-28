@@ -1,0 +1,12 @@
+heading: Trainingslocaties
+
+outdoor_heading: Buitenlocaties
+outdoor: Amsterdam West | https://maps.app.goo.gl/VUMMbbNm3fc2AYwP9
+outdoor: Rembrandtpark | https://maps.app.goo.gl/no7TNUmHKFNByeRa7
+outdoor: Oosterpark | https://maps.app.goo.gl/sFMsjN121SWZYvXVA
+outdoor: Osdorp | https://maps.app.goo.gl/6CAcfKCWEDBdLpYSA
+outdoor: Duivendrecht | https://maps.app.goo.gl/5wiZbVXt6TMAMtm79
+
+indoor_heading: Binnenlocatie
+indoor: GymOne Amstelveen | https://maps.app.goo.gl/mYshpZyxnWqrP41B6
+

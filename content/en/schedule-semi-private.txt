@@ -1,0 +1,6 @@
+heading: Schedule
+subtitle: Semi-Private Training sessions
+
+day: Monday | 7:00 AM — 8:00 AM
+day: Wednesday | 5:00 PM — 6:00 PM
+day: Friday | 7:00 AM — 8:00 AM

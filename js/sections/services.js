@@ -90,8 +90,8 @@ async function buildPricingHtml(file) {
   `;
 }
 
-async function buildScheduleHtml() {
-  const raw = await loadContent('schedule-info.txt');
+async function buildScheduleHtml(file) {
+  const raw = await loadContent(file);
   const data = parseKeyValue(raw);
   const days = data.day ? (Array.isArray(data.day) ? data.day : [data.day]) : [];
   const plans = data.plan ? (Array.isArray(data.plan) ? data.plan : [data.plan]) : [];
@@ -207,10 +207,10 @@ export default async function loadServices() {
       let locationsListHtml = '';
       let pricingHtml = '';
 
-      if (card.include_location === 'true') locationHtml = await buildLocationHtml();
-      if (card.include_schedule === 'true') scheduleHtml = await buildScheduleHtml();
-      if (card.location_file) locationsListHtml = await buildLocationsListHtml(card.location_file);
-      if (card.pricing_file) pricingHtml = await buildPricingHtml(card.pricing_file);
+      try { if (card.include_location === 'true') locationHtml = await buildLocationHtml(); } catch (e) { console.warn('Location load failed:', e); }
+      try { if (card.schedule_file) scheduleHtml = await buildScheduleHtml(card.schedule_file); } catch (e) { console.warn('Schedule load failed:', e); }
+      try { if (card.location_file) locationsListHtml = await buildLocationsListHtml(card.location_file); } catch (e) { console.warn('Locations list load failed:', e); }
+      try { if (card.pricing_file) pricingHtml = await buildPricingHtml(card.pricing_file); } catch (e) { console.warn('Pricing load failed:', e); }
 
       expandedEl.innerHTML = `
         <div class="expanded-inner">

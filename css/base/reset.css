@@ -8,6 +8,13 @@
   box-sizing: border-box;
 }
 
+input,
+textarea,
+select,
+button {
+  font: inherit;
+}
+
 html {
   scroll-behavior: smooth;
 }

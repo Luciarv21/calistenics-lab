@@ -1,0 +1,6 @@
+heading: Locatie
+subtitle: Waar we trainen
+
+location_name: Calisthenicspark in Amsterdam-West
+maps_url: https://maps.app.goo.gl/VUMMbbNm3fc2AYwP9
+

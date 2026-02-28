@@ -1,0 +1,7 @@
+heading: Pricing
+
+plan: Single session | €15
+plan: 10 credits | €12 per session | €120
+plan: 20 credits | €9 per session | €180
+
+note: Group Training sessions are drop-in or prepaid via a session card.
