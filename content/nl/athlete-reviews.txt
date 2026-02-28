@@ -1,0 +1,19 @@
+heading: Wat onze atleten zeggen
+subtitle: Echte ervaringen van onze community
+
+---
+stars: 5
+text: Great PT sessions, have been working on handstand, muscle up and human flag and successfully made it there thanks to rigorous training plans and strong advice <br> ...
+author: Pierre L.
+
+---
+stars: 5
+text: Continuing my calisthenics journey with Bryan was one of the best decisions I made last year. He is incredibly fun, kind and knowledgeable and always goes the extra mile to support and guide. <br> ...
+author: Long V.
+
+---
+stars: 5
+text: In slechts een paar maanden personal training, heb ik zeer goede resultaten behaald en ben ik erin geslaagd om mijn eerste pull-up, chin-up en dip te doen! <br> ...
+author: Giorgia dB.
+
+google_maps_url: #

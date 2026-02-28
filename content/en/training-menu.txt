@@ -2,20 +2,34 @@ heading: Programs
 subtitle: Choose the program that fits your goals
 
 ---
+name: Group Training
+description: High-energy outdoor calisthenics classes in a motivating group setting.
+detail: Fun, community-based training
+detail: Focus on full-body strength and conditioning
+detail: All levels welcome
+detail: Fixed schedule and location
+price: From €15/session
+
+image: images/group-lessons.jpg
+expanded: Train together in an open group where we focus on the fundamentals of calisthenics: strength, coordination, mobility and control. Perfect if you want structure, coaching and community in one session.
+expanded_detail: Technique-focused group coaching on basics and skills.
+expanded_detail: Progressions for beginners and advanced athletes.
+include_location: true
+include_schedule: true
+
+---
 name: Semi-Private Training
 description: Train with the focus of personal training, but the energy of a small group.
 detail: Motivation through a small community
 detail: Personalized training program included
 detail: All levels welcome
-detail: Fixed schedule and location
+detail: Even more individual attention than in group lessons
 price: From €120/month
 
 image: images/semi-private-training.jpeg
 expanded: Train together at our dedicated calisthenics park in Amsterdam West. These sessions offer the perfect balance between personal attention and the motivation of a small, dedicated community.
 expanded_detail: Every member receives their own customized training program.
-expanded_detail:  Sessions are held on a fixed schedule.
-include_location: true
-include_schedule: true
+expanded_detail: Sessions are fully tailored to your program and goals.
 
 ---
 name: Personal Training

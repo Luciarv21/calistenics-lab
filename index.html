@@ -10,22 +10,17 @@
       href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <nav class="navbar" role="navigation" aria-label="Main">
       <div class="nav-logo">
-        <img src="images/logo.jpeg" alt="Calisthenics Skill Lab" class="logo-img" />
+        <img src="images/logo.png" alt="Calisthenics Skill Lab" class="logo-img" />
       </div>
 
       <div class="nav-right-group">
-        <div class="lang-switch" aria-label="Language">
-          <button id="lang-en" class="lang-btn active" aria-pressed="true">EN</button>
-          <span class="separator" aria-hidden="true">|</span>
-          <button id="lang-nl" class="lang-btn" aria-pressed="false">NL</button>
-        </div>
-
         <ul class="nav-links" role="tablist">
           <li role="presentation">
             <a
@@ -88,6 +83,12 @@
             >
           </li>
         </ul>
+
+        <div class="lang-switch" aria-label="Language">
+          <button id="lang-en" class="lang-btn active" aria-pressed="true">EN</button>
+          <span class="separator" aria-hidden="true">|</span>
+          <button id="lang-nl" class="lang-btn" aria-pressed="false">NL</button>
+        </div>
       </div>
 
       <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
@@ -159,6 +160,6 @@
       </div>
     </footer>
 
-    <script type="module" src="/js/main.js"></script>
+    <script src="js/app.js"></script>
   </body>
 </html>
