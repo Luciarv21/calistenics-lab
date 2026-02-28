@@ -1,7 +1,7 @@
 title: Calisthenics Skill Lab
 subtitle: Amsterdam
 tagline: Make the impossible possible!
-button1_text: Explore Training
+button1_text: Explore Programs
 button1_tab: services
 button2_text: Free Trial Lesson
 button2_tab: contact
