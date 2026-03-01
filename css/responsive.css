@@ -1,12 +1,30 @@
 /* Global responsive overrides */
 
 @media (max-width: 768px) {
+  /* --- Layout --- */
+  .container {
+    padding: 0 20px;
+  }
+
+  /* --- Navbar --- */
   .navbar {
     padding: 12px 20px;
+    min-height: auto;
+    align-items: center;
+  }
+
+  .logo-img {
+    height: 60px;
   }
 
   .nav-toggle {
     display: flex;
+  }
+
+  .nav-right-group {
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 16px;
   }
 
   .nav-links {
@@ -30,10 +48,105 @@
     padding: 12px 16px;
   }
 
+  .lang-switch {
+    margin-right: 0;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+  }
+
+  .hero::after {
+    width: 100%;
+    opacity: 0.3;
+    mask-image: linear-gradient(to bottom, transparent 0%, black 40%);
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 40%);
+  }
+
+  .hero-content {
+    margin-left: 0;
+    padding: 120px 24px 60px;
+    text-align: center;
+  }
+
+  .hero-subtitle {
+    letter-spacing: 3px;
+    font-size: clamp(1rem, 4vw, 1.5rem);
+  }
+
+  .hero-text {
+    font-size: 1rem;
+    margin-bottom: 28px;
+  }
+
+  .hero-content .btn {
+    display: block;
+    margin: 0 auto 12px;
+    max-width: 280px;
+  }
+
+  .hero-content .btn-outline {
+    margin-left: 0 !important;
+  }
+
+  /* --- Welcome Intro --- */
+  .welcome-intro {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 48px 0 40px;
+    max-width: 100%;
+  }
+
+  .welcome-intro::before {
+    display: none;
+  }
+
+  .intro-heading {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .intro-subheading {
+    margin-bottom: 24px;
+  }
+
+  .intro-highlight {
+    padding: 20px 20px;
+    margin: 24px 0;
+  }
+
+  .intro-highlight p {
+    font-size: 1.05rem;
+  }
+
+  .intro-bullets {
+    grid-template-columns: 1fr;
+  }
+
+  /* --- Tab Content --- */
+  .tab-content {
+    padding-top: 60px;
+  }
+
+  /* --- Section Titles --- */
+  .section-title {
+    margin-top: 32px;
+    font-size: clamp(1.6rem, 6vw, 2.2rem);
+  }
+
+  /* --- About --- */
+  .about-heading {
+    margin-top: 32px;
+    font-size: clamp(1.8rem, 6vw, 2.5rem);
+  }
+
   .about-section,
   .about-section.image-right {
     grid-template-columns: 1fr;
     gap: 24px;
+    padding: 40px 0;
   }
 
   .about-section.image-right .about-section-image,
@@ -46,15 +159,98 @@
     margin: 0 auto;
   }
 
+  .about-section-stacked {
+    padding: 40px 0;
+  }
+
   .about-columns {
     grid-template-columns: 1fr;
+    gap: 24px;
+    padding: 40px 0;
+  }
+
+  .about-column {
+    padding: 24px;
   }
 
   .about-stats {
     justify-content: center;
     gap: 32px;
+    flex-wrap: wrap;
+    padding: 24px 0;
   }
 
+  .about-cta {
+    margin-top: 40px;
+    margin-bottom: 40px;
+    padding: 28px 20px;
+  }
+
+  .about-cta-text {
+    font-size: 1.1rem;
+  }
+
+  .about-section-title {
+    font-size: 1.4rem;
+  }
+
+  .about-coach-quote {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+
+  /* --- Services --- */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .expanded-inner {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .expanded-image {
+    min-height: 200px;
+    position: relative;
+  }
+
+  .expanded-image img {
+    border-radius: 12px 12px 0 0;
+    -webkit-mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+    mask-image: linear-gradient(to bottom, black 50%, transparent 100%);
+  }
+
+  .expanded-details {
+    padding: 24px 20px;
+  }
+
+  .expanded-details h3 {
+    font-size: 1.3rem;
+  }
+
+  .location-card {
+    padding: 24px 16px;
+  }
+
+  .pricing-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .pricing-card {
+    width: 100%;
+    max-width: 300px;
+    min-width: unset;
+    padding: 24px 20px;
+  }
+
+  .schedule-table th,
+  .schedule-table td {
+    padding: 12px 12px;
+    font-size: 0.95rem;
+  }
+
+  /* --- Contact --- */
   .contact-grid {
     grid-template-columns: 1fr;
   }
@@ -63,11 +259,21 @@
     order: -1;
   }
 
-  .services-grid {
+  .btn-submit {
+    align-self: stretch;
+  }
+
+  /* --- Reviews --- */
+  .reviews-grid {
     grid-template-columns: 1fr;
   }
 
-  .reviews-grid {
-    grid-template-columns: 1fr;
+  .review-card {
+    padding: 24px 20px;
+  }
+
+  /* --- Footer --- */
+  .footer {
+    padding: 20px 0;
   }
 }
