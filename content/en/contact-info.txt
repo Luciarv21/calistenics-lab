@@ -11,7 +11,7 @@ location: Osdorp
 location: Duivendrecht
 location: GymOne Amstelveen (indoor)
 
-email: info@calisthenicsskillab.nl
+email: info@calistenicsskilllab.nl
 
 social_label: Follow Us
 instagram: @Calibybryy | https://www.instagram.com/calibybryy/
