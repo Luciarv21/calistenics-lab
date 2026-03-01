@@ -1,16 +1,18 @@
 heading: Master Your Body at the SkillLab
-subheading: From Zaanstad to Amsterdam: Same Expertise, Personalized Focus.
+subheading: Community energy. Coaching precision. Real results.
 
-paragraph: Are you ready to truly learn what your body is capable of? After building a thriving community at Calisthenics Zaanstad, I have brought my passion and expertise to the capital. Welcome to <strong>Calisthenics SkillLab Amsterdam</strong>.
+paragraph: Are you ready to discover what your body is truly capable of? Welcome to <strong>Calisthenics SkillLab Amsterdam</strong> — built on the foundation of a thriving community at Calisthenics Zaanstad, now brought to the capital with the same passion, expertise, and energy.
 
-paragraph: We've evolved. While Zaanstad was about the energy of outdoor group classes, SkillLab Amsterdam is about <strong>precision, progression, and personal attention</strong>. We have traded large groups for a high-end, results-driven approach. Whether you choose Semi-Private training, 1-on-1 Personal Training, or Online Coaching, you will never follow a "standard" routine.
+paragraph: Our group sessions combine high-energy training with a social, motivating atmosphere. Every class is designed to improve your strength, stamina, and mobility while you master the fundamentals and work toward impressive skills.
 
-highlight: Every single member receives a fully customized personal program.
+paragraph: Looking for more individual attention? Our Semi-Private, Private, and Online Coaching options give you targeted programming and personal guidance — so you progress faster, safer, and on your own terms.
 
-heading2: Why Calisthenics SkillLab?
+highlight: Every member, regardless of the program, receives the specific coaching and progressions needed to grow at their own pace.
 
-paragraph: Calisthenics is more than just a workout; it is the ultimate path to becoming stronger, leaner, and more flexible using nothing but your own body weight. At the SkillLab, we bridge the gap between strength training and gymnastics:
+heading2: Why Calisthenics?
+
+paragraph: Calisthenics is more than a workout — it is the ultimate path to becoming stronger, leaner, and more capable using nothing but your own body weight. From your first push-up to elite-level skills, every step is a milestone.
 
 bullet: Master the Basics | Perfect your pull-ups, push-ups, and dips.
-bullet: Unlock Skills | Achieve the Handstand, Muscle-up, and the Human Flag.
-bullet: Total Body Evolution | Build functional muscle, lose body fat, and drastically improve your mobility.
+bullet: Unlock Skills | Achieve the Handstand, Muscle-up, and Human Flag.
+bullet: Total Body Evolution | Build functional muscle, lose body fat, and improve your mobility.

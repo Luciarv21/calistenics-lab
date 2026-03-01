@@ -2,24 +2,48 @@ heading: Programs
 subtitle: Choose the program that fits your goals
 
 ---
+name: Group Training
+description: High-energy calisthenics sessions in a motivating community.
+detail: Fun, community-based training
+detail: Focus on full-body strength, conditioning and skills
+detail: All levels welcome
+detail: Fixed schedule and location
+price: From €9/session
+
+image: images/a_new_vision_for_amsterdam.jpeg
+expanded: Train together in an open group where we focus on the fundamentals of calisthenics: strength, coordination, mobility, control and skills. Perfect if you want structure, coaching and community in one session.
+expanded_detail: <strong>Energy & Community</strong>: Train with a like-minded group that keeps you motivated
+expanded_detail: <strong>Progressions for beginners and advanced athletes</strong>
+expanded_detail: <strong>Master the Basics</strong>: Focus on full-body strength, conditioning, and foundational skills
+expanded_detail: <strong>Scalable for All</strong>: Every exercise is adapted to your current level
+expanded_detail: <strong>Fixed Schedule</strong>: Join our regular outdoor sessions at set locations
+location_file: location-group-training.txt
+schedule_file: schedule-group-training.txt
+pricing_file: pricing-group-training.txt
+
+---
 name: Semi-Private Training
-description: Train with the focus of personal training, but the energy of a small group.
+description: The precision of personal training with the shared energy of a small group (max. 5).
 detail: Motivation through a small community
 detail: Personalized training program included
 detail: All levels welcome
-detail: Fixed schedule and location
+detail: Even more individual attention than in group lessons
 price: From €120/month
 
 image: images/semi-private-training.jpeg
-expanded: Train together at our dedicated calisthenics park in Amsterdam West. These sessions offer the perfect balance between personal attention and the motivation of a small, dedicated community.
-expanded_detail: Every member receives their own customized training program.
-expanded_detail:  Sessions are held on a fixed schedule.
-include_location: true
-include_schedule: true
+expanded: Train at our calisthenics park in Amsterdam West. These sessions offer the perfect balance between high-level personal attention and the motivation of training alongside a small, dedicated group. Unlike a standard group class, you work specifically on your own goals within a professional, focused environment.
+expanded_detail: <strong>Personalized Programming</strong>: Every member receives a fully customized training program tailored to their specific goals
+expanded_detail: <strong>Targeted Coaching</strong>: Benefit from the individual attention needed to master complex skills safely and effectively
+expanded_detail: <strong>Shared Motivation</strong>: Train with a small group of like-minded athletes while following your own personal roadmap
+expanded_detail: <strong>Goal-Driven Sessions</strong>: Every workout is specifically designed to track and ensure your personal progression
+expanded_detail: <strong>Scalable for All</strong>: Whether you are working toward your first pull-up or an advanced skill, you train at your own level
+location_file: location-semi-private.txt
+schedule_file: schedule-semi-private.txt
+pricing_file: pricing-semi-private.txt
 
 ---
 name: Personal Training
-description: Private sessions for maximum results and total flexibility.
+description: 1-on-1 sessions for maximum results, total focus, and full flexibility.
 detail: Fully dedicated one-on-one sessions
 detail: Personalized training program included
 detail: All levels welcome
@@ -27,13 +51,17 @@ detail: Flexible schedule and location
 price: From €50/session
 
 image: images/personal_training.PNG
-expanded: One-on-one training sessions tailored entirely to your specific goals, level, and injury history. <br> Whether you want to nail your first pull-up or master the human flag, every session is built around you. This is the fastest path to results. Choose your preferred location and timeslot across Amsterdam.
+expanded: Experience the most direct path to reaching your peak performance. Whether you want to nail your first pull-up, master the Human Flag, or build a bulletproof physique, every session is 100% dedicated to you. We take your current level and injury history into account to build a safe, high-impact roadmap to success.
+expanded_detail: <strong>100% Dedicated</strong>: Pure one-on-one coaching to fast-track your progress
+expanded_detail: <strong>Custom-Built Strategy</strong>: A fully personalized program designed for your body and goals
+expanded_detail: <strong>Technical Mastery</strong>: Deep-dive into technique to ensure safe and rapid evolution
+expanded_detail: <strong>Ultimate Flexibility</strong>: Train at a time and location that fits your lifestyle
 location_file: location-personal-training.txt
 pricing_file: pricing-personal-training.txt
 
 ---
 name: Online Coaching
-description: Expert guidance and custom programming, wherever you are.
+description: Expert guidance and custom programming, wherever and whenever you train.
 detail: Remote guidance & check-ins
 detail: 1-month or 3-month programs
 detail: All levels welcome
@@ -41,9 +69,11 @@ detail: Train on your own schedule
 price: From €100/month
 
 image: images/online_coaching.jpg
-expanded: Structured training plans that you can follow anywhere. <br> You get the same elite programming as our in-person athletes, with remote guidance to keep you on track. It includes:
-expanded_detail: Regular check-ins
-expanded_detail: Video feedback on your form
-expanded_detail: Program adjustments based on your progress.
+expanded: Receive the same elite programming as our in-person athletes, designed to fit your environment and schedule. Whether you train at home, in a local park, or at a commercial gym, you’ll have a professional roadmap and a coach in your pocket to ensure you never plateau.
+expanded_detail: <strong>Custom Training Roadmap</strong>: A fully personalized 1-month or 3-month program built for your specific goals and equipment
+expanded_detail: <strong>Video Form Analysis</strong>: Submit videos of your sets for detailed technical feedback, ensuring every rep is performed safely and effectively
+expanded_detail: <strong>Elite Programming</strong>: Benefit from the same proven methodologies used at the Amsterdam SkillLab, adapted for remote training
+expanded_detail: <strong>Pro-Active Accountability</strong>: Regular digital check-ins to track your progress, adjust your plan, and keep your motivation high
+expanded_detail: <strong>Total Training Flexibility</strong>: The perfect solution for those with a busy lifestyle who want professional results on their own terms
 
 pricing_file: pricing-online-coaching.txt

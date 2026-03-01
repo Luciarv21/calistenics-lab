@@ -1,0 +1,5 @@
+heading: Tarieven
+
+plan: 1-maands programma | €100
+plan: 3-maands programma | €250
+

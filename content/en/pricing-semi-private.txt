@@ -1,0 +1,6 @@
+heading: Pricing
+
+plan: 1x per week | €30 per class | €120/month
+plan: 2x per week | €20 per class | €160/month
+
+note: Semi-Private Training groups are paid monthly.

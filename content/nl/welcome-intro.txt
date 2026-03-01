@@ -1,0 +1,18 @@
+heading: Beheers je lichaam in het SkillLab
+subheading: Community energie. Coaching precisie. Echte resultaten.
+
+paragraph: Ben je klaar om te ontdekken waartoe je lichaam echt in staat is? Welkom bij <strong>Calisthenics SkillLab Amsterdam</strong> — gebouwd op het fundament van een bloeiende community bij Calisthenics Zaanstad, nu naar de hoofdstad gebracht met dezelfde passie, expertise en energie.
+
+paragraph: Onze groepslessen combineren intensieve training met een sociale, motiverende sfeer. Elke les is ontworpen om je kracht, uithoudingsvermogen en mobiliteit te verbeteren terwijl je de basis onder de knie krijgt en werkt aan indrukwekkende skills.
+
+paragraph: Op zoek naar meer individuele aandacht? Onze Semi-Private, Personal Training en Online Coaching opties bieden je gerichte programmering en persoonlijke begeleiding — zodat je sneller, veiliger en op jouw voorwaarden vooruitgaat.
+
+highlight: Elk lid ontvangt, ongeacht het programma, de specifieke coaching en progressies die nodig zijn om in eigen tempo te groeien.
+
+heading2: Waarom Calisthenics?
+
+paragraph: Calisthenics is meer dan een workout — het is de ultieme weg om sterker, slanker en capabeler te worden met niets anders dan je eigen lichaamsgewicht. Van je eerste push-up tot skills op eliteniveau, elke stap is een mijlpaal.
+
+bullet: Master the Basics | Perfectioneer je pull-ups, push-ups en dips.
+bullet: Unlock Skills | Behaal de Handstand, Muscle-up en Human Flag.
+bullet: Total Body Evolution | Bouw functionele spiermassa op, verlaag je vetpercentage en verbeter je mobiliteit.

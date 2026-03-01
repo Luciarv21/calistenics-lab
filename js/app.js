@@ -449,8 +449,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (card.include_location === 'true') {
           locationHtml = await buildLocationHtml();
         }
-        if (card.include_schedule === 'true') {
-          scheduleHtml = await buildScheduleHtml();
+        if (card.schedule_file) {
+          scheduleHtml = await buildScheduleHtml(card.schedule_file);
         }
         if (card.location_file) {
           locationsListHtml = await buildLocationsListHtml(card.location_file);
@@ -585,18 +585,20 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="pricing-card">
                 <span class="pricing-frequency">${parts[0]}</span>
                 <span class="pricing-per-class">${parts[1]}</span>
+                ${parts[2] ? `<span class="pricing-total">${parts[2]}</span>` : ''}
               </div>
             `;
             })
             .join('\n')}
         </div>
+        ${data.note ? `<p class="schedule-note">${data.note}</p>` : ''}
       </div>
     `;
   }
 
   // ---- Schedule HTML builder ----
-  async function buildScheduleHtml() {
-    const raw = await loadContent('schedule-info.txt');
+  async function buildScheduleHtml(file) {
+    const raw = await loadContent(file);
     const data = parseKeyValue(raw);
     const days = data.day ? (Array.isArray(data.day) ? data.day : [data.day]) : [];
     const plans = data.plan ? (Array.isArray(data.plan) ? data.plan : [data.plan]) : [];
@@ -654,37 +656,62 @@ document.addEventListener('DOMContentLoaded', () => {
     const locations = Array.isArray(data.location) ? data.location : [data.location];
     const [instaHandle, instaUrl] = (data.instagram || '').split('|').map((s) => s.trim());
 
+    const isNL = currentLang === 'nl';
+    const heading = data.heading || (isNL ? 'Neem contact op' : 'Get in Touch');
+
+    let headingHtml;
+    if (isNL) {
+      headingHtml = heading;
+    } else {
+      const parts = heading.split(' ');
+      const accent = parts.pop();
+      const rest = parts.join(' ');
+      headingHtml = `${rest} <span class="accent">${accent}</span>`;
+    }
+
+    const labels = {
+      name: isNL ? 'Naam' : 'Name',
+      email: isNL ? 'E-mail' : 'Email',
+      subject: isNL ? 'Onderwerp' : 'Subject',
+      message: isNL ? 'Bericht' : 'Message',
+      namePlaceholder: isNL ? 'Uw naam' : 'Your name',
+      emailPlaceholder: isNL ? 'uw@email.nl' : 'your@email.com',
+      subjectPlaceholder: isNL ? 'Waar bent u in geïnteresseerd?' : 'What are you interested in?',
+      messagePlaceholder: isNL ? 'Vertel ons over uw doelen...' : 'Tell us about your goals...',
+      submit: isNL ? 'Verstuur' : 'Send Message',
+    };
+
     const el = document.getElementById('contact-content');
     el.innerHTML = `
-      <h2 class="section-title">Get in <span class="accent">Touch</span></h2>
+      <h2 class="section-title">${headingHtml}</h2>
       <p class="section-subtitle">${data.subtitle || ''}</p>
       <div class="contact-grid">
         <form id="contact-form" class="contact-form">
           <div class="form-group">
-            <label for="name">Name</label>
-            <input type="text" id="name" name="name" required placeholder="Your name">
+            <label for="name">${labels.name}</label>
+            <input type="text" id="name" name="name" required placeholder="${labels.namePlaceholder}">
           </div>
           <div class="form-group">
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" required placeholder="your@email.com">
+            <label for="email">${labels.email}</label>
+            <input type="email" id="email" name="email" required placeholder="${labels.emailPlaceholder}">
           </div>
           <div class="form-group">
-            <label for="subject">Subject</label>
+            <label for="subject">${labels.subject}</label>
             <select id="subject" name="subject" required>
-              <option value="" disabled selected>What are you interested in?</option>
+              <option value="" disabled selected>${labels.subjectPlaceholder}</option>
               ${options.map((o) => `<option value="${o.toLowerCase()}">${o}</option>`).join('\n')}
             </select>
           </div>
           <div class="form-group">
-            <label for="message">Message</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Tell us about your goals..."></textarea>
+            <label for="message">${labels.message}</label>
+            <textarea id="message" name="message" rows="5" required placeholder="${labels.messagePlaceholder}"></textarea>
           </div>
-          <button type="submit" class="btn btn-submit">Send Message</button>
+          <button type="submit" class="btn btn-submit">${labels.submit}</button>
           <div id="form-status" class="form-status"></div>
         </form>
         <div class="contact-info">
           <div class="info-item">
-            <h4>${data.location_label || 'Location'}</h4>
+            <h4>${data.location_label || (isNL ? 'Trainingslocaties' : 'Location')}</h4>
             ${locations.map((l) => `<p>${l}</p>`).join('\n')}
           </div>
           <div class="info-item">
@@ -692,9 +719,13 @@ document.addEventListener('DOMContentLoaded', () => {
             <p>${data.email || ''}</p>
           </div>
           <div class="info-item">
-            <h4>${data.social_label || 'Follow Us'}</h4>
+            <h4>${data.social_label || (isNL ? 'Volg ons' : 'Follow Us')}</h4>
             <div class="social-links">
-              ${instaHandle ? `<a href="${instaUrl}" class="social-link" target="_blank" rel="noopener">${instaHandle}</a>` : ''}
+              ${
+                instaHandle
+                  ? `<a href="${instaUrl}" class="social-link" target="_blank" rel="noopener">${instaHandle}</a>`
+                  : ''
+              }
             </div>
           </div>
         </div>
@@ -712,9 +743,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const header = parseKeyValue(sections[0]);
     const reviews = sections.slice(1).map((s) => parseKeyValue(s));
 
+    const isNL = currentLang === 'nl';
+    const fallbackHeading = isNL ? 'Wat onze atleten zeggen' : 'What Our Athletes Say';
+    const headingText = header.heading || fallbackHeading;
+
+    let headingHtml;
+    if (isNL) {
+      headingHtml = headingText;
+    } else {
+      const parts = headingText.split(' ');
+      const accent = parts.pop();
+      const rest = parts.join(' ');
+      headingHtml = `${rest} <span class="accent">${accent}</span>`;
+    }
+
     const el = document.getElementById('reviews-content');
     el.innerHTML = `
-      <h2 class="section-title">What Our <span class="accent">Athletes</span> Say</h2>
+      <h2 class="section-title">${headingHtml}</h2>
       <p class="section-subtitle">${header.subtitle || ''}</p>
       <div class="reviews-grid">
         ${reviews
@@ -731,7 +776,7 @@ document.addEventListener('DOMContentLoaded', () => {
           .join('\n')}
       </div>
       <div class="reviews-cta">
-        <p>See all our reviews on</p>
+        <p>${isNL ? 'Bekijk al onze reviews op' : 'See all our reviews on'}</p>
         <a href="${header.google_maps_url || '#'}" class="btn btn-outline" target="_blank" rel="noopener">Google Maps</a>
       </div>
     `;
@@ -747,6 +792,11 @@ document.addEventListener('DOMContentLoaded', () => {
     contactForm.addEventListener('submit', (e) => {
       e.preventDefault();
 
+      const isNL = currentLang === 'nl';
+      const successMessage = isNL
+        ? 'Bericht verzonden! We nemen snel contact op.'
+        : "Message sent successfully! We'll get back to you soon.";
+
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
@@ -754,7 +804,7 @@ document.addEventListener('DOMContentLoaded', () => {
         message: document.getElementById('message').value,
       };
 
-      formStatus.textContent = "Message sent successfully! We'll get back to you soon.";
+      formStatus.textContent = successMessage;
       formStatus.className = 'form-status success';
       contactForm.reset();
 

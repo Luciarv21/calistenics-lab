@@ -1,0 +1,5 @@
+heading: Tarieven
+
+plan: 3x per week | €50 per sessie
+plan: 2x per week | €55 per sessie
+plan: 1x per week | €66 per sessie

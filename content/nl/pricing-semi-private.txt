@@ -1,0 +1,6 @@
+heading: Tarieven
+
+plan: 1x per week | €30 per sessie | €120/maand
+plan: 2x per week | €20 per sessie | €160/maand
+
+note: Semi-Private Training groepen worden maandelijks afgerekend.

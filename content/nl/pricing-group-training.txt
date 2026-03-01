@@ -1,0 +1,7 @@
+heading: Tarieven
+
+plan: Losse sessie | €15
+plan: 10 credits | €12 per sessie | €120
+plan: 20 credits | €9 per sessie | €180
+
+note: Groepslessen zijn op inloopbasis of vooraf te betalen via een strippenkaart.

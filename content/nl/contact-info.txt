@@ -1,0 +1,17 @@
+heading: Neem contact op
+subtitle: Klaar om met calisthenics te beginnen? Boek een gratis proefles of stuur een bericht!
+
+form_options: Groepstraining | Personal Training | Online Coaching | Gratis proefles | Anders
+
+location_label: Trainingslocaties
+location: Amsterdam West
+location: Rembrandtpark
+location: Oosterpark
+location: Osdorp
+location: Duivendrecht
+location: GymOne Amstelveen (indoor)
+
+email: info@calistenicsskilllab.nl
+
+social_label: Volg ons
+instagram: @Calibybryy | https://www.instagram.com/calibybryy/
