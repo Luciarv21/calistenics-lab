@@ -4,5 +4,5 @@
 
 export const config = {
   /** POST URL for contact form. Leave empty to only log to console. */
-  formEndpoint: '',
+  formEndpoint: 'https://usebasin.com/f/624ada6a7f1c',
 };

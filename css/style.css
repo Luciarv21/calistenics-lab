@@ -84,6 +84,8 @@ a:hover {
   padding: 15px 48px;
   height: auto; /* Let it grow with the content */
   min-height: 140px; /* Ensure enough space for the stacked items */
+  position: relative; /* Anchor mobile dropdown */
+  z-index: 50; /* Keep nav above page content */
 }
 
 .nav-logo {
