@@ -1,3 +1,5 @@
+import { config } from './config.js';
+
 let currentLang = 'en'; // Default language
 document.addEventListener('DOMContentLoaded', () => {
   const navLinks = document.querySelectorAll('.nav-link');
@@ -789,13 +791,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const formStatus = document.getElementById('form-status');
     if (!contactForm) return;
 
-    contactForm.addEventListener('submit', (e) => {
+    contactForm.addEventListener('submit', async (e) => {
       e.preventDefault();
 
       const isNL = currentLang === 'nl';
       const successMessage = isNL
         ? 'Bericht verzonden! We nemen snel contact op.'
         : "Message sent successfully! We'll get back to you soon.";
+      const errorMessage = isNL
+        ? 'Er ging iets mis. Probeer het opnieuw.'
+        : 'Something went wrong. Please try again.';
+      const networkErrorMessage = isNL
+        ? 'Netwerkfout. Probeer het opnieuw.'
+        : 'Network error. Please try again.';
 
       const formData = {
         name: document.getElementById('name').value,
@@ -804,17 +812,45 @@ document.addEventListener('DOMContentLoaded', () => {
         message: document.getElementById('message').value,
       };
 
-      formStatus.textContent = successMessage;
-      formStatus.className = 'form-status success';
-      contactForm.reset();
+      if (!config.formEndpoint) {
+        formStatus.textContent = successMessage;
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+        console.log('Form data (no endpoint configured):', formData);
+        return;
+      }
+
+      formStatus.textContent = isNL ? 'Bezig met verzenden…' : 'Sending…';
+      formStatus.className = 'form-status';
 
       setTimeout(() => {
         formStatus.textContent = '';
         formStatus.className = 'form-status';
       }, 5000);
 
-      // TODO: Replace with actual form submission (EmailJS or PHP endpoint)
-      console.log('Form data:', formData);
+      try {
+        const res = await fetch(config.formEndpoint, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            Accept: 'application/json',
+          },
+          body: JSON.stringify(formData),
+        });
+
+        if (!res.ok) {
+          formStatus.textContent = errorMessage;
+          formStatus.className = 'form-status error';
+          return;
+        }
+
+        formStatus.textContent = successMessage;
+        formStatus.className = 'form-status success';
+        contactForm.reset();
+      } catch {
+        formStatus.textContent = networkErrorMessage;
+        formStatus.className = 'form-status error';
+      }
     });
   }
 
