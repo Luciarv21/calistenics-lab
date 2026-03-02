@@ -823,7 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="reviews-cta">
         <p>${isNL ? 'Bekijk al onze reviews op' : 'See all our reviews on'}</p>
-        <a href="${header.google_maps_url || '#'}" class="btn btn-outline" target="_blank" rel="noopener">Google Maps</a>
+        <a href="${header.google_maps_url || '#'}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Google Maps</a>
       </div>
     `;
   }
