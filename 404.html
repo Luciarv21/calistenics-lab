@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Calisthenics Skill Lab Amsterdam offers calisthenics classes, coaching, and skill training in Amsterdam. Join our community to build strength, mobility, and master impressive bodyweight skills."
+    />
+    <title>Calisthenics Skill Lab Amsterdam</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="images/logo.png" />
+    <link rel="apple-touch-icon" href="images/logo.png" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <nav class="navbar" role="navigation" aria-label="Main">
+      <div class="nav-logo">
+        <img
+          src="images/logo.png"
+          alt="Calisthenics Skill Lab Amsterdam logo – calisthenics training and coaching"
+          class="logo-img"
+        />
+      </div>
+
+      <div class="nav-right-group">
+        <ul class="nav-links" role="tablist">
+          <li role="presentation">
+            <a
+              id="tab-welcome"
+              href="#welcome"
+              class="nav-link active"
+              data-tab="welcome"
+              role="tab"
+              aria-selected="true"
+              data-i18n="nav.welcome"
+              >Welcome</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              id="tab-about"
+              href="#about"
+              class="nav-link"
+              data-tab="about"
+              role="tab"
+              aria-selected="false"
+              data-i18n="nav.about"
+              >About</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              id="tab-services"
+              href="#services"
+              class="nav-link"
+              data-tab="services"
+              role="tab"
+              aria-selected="false"
+              data-i18n="nav.services"
+              >Programs</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              id="tab-contact"
+              href="#contact"
+              class="nav-link"
+              data-tab="contact"
+              role="tab"
+              aria-selected="false"
+              data-i18n="nav.contact"
+              >Contact</a
+            >
+          </li>
+          <li role="presentation">
+            <a
+              id="tab-reviews"
+              href="#reviews"
+              class="nav-link"
+              data-tab="reviews"
+              role="tab"
+              aria-selected="false"
+              data-i18n="nav.reviews"
+              >Reviews</a
+            >
+          </li>
+        </ul>
+
+        <div class="lang-switch" aria-label="Language">
+          <button id="lang-en" class="lang-btn active" aria-pressed="true">EN</button>
+          <span class="separator" aria-hidden="true">|</span>
+          <button id="lang-nl" class="lang-btn" aria-pressed="false">NL</button>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+
+    <main id="main-content" role="main">
+      <section
+        id="welcome"
+        class="tab-content active"
+        role="tabpanel"
+        aria-hidden="false"
+        aria-labelledby="tab-welcome"
+      >
+        <div class="hero">
+          <div class="hero-overlay"></div>
+          <div id="hero-content" class="hero-content"></div>
+        </div>
+        <div class="container">
+          <div id="welcome-intro" class="welcome-intro"></div>
+        </div>
+      </section>
+
+      <section
+        id="about"
+        class="tab-content"
+        role="tabpanel"
+        aria-hidden="true"
+        aria-labelledby="tab-about"
+      >
+        <div id="about-content" class="container"></div>
+      </section>
+
+      <section
+        id="services"
+        class="tab-content"
+        role="tabpanel"
+        aria-hidden="true"
+        aria-labelledby="tab-services"
+      >
+        <div id="services-content" class="container"></div>
+      </section>
+
+      <section
+        id="contact"
+        class="tab-content"
+        role="tabpanel"
+        aria-hidden="true"
+        aria-labelledby="tab-contact"
+      >
+        <div id="contact-content" class="container"></div>
+      </section>
+
+      <section
+        id="reviews"
+        class="tab-content"
+        role="tabpanel"
+        aria-hidden="true"
+        aria-labelledby="tab-reviews"
+      >
+        <div id="reviews-content" class="container"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <p>&copy; 2026 Calisthenics Skill Lab Amsterdam. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+  </body>
+</html>
+
