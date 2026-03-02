@@ -1,5 +1,6 @@
 heading: Wat onze atleten zeggen
 subtitle: Echte ervaringen van onze community
+google_maps_url: https://maps.app.goo.gl/rNPDQHVsnFyevY8u5
 
 ---
 stars: 5
@@ -15,5 +16,3 @@ author: Long V.
 stars: 5
 text: In slechts een paar maanden personal training, heb ik zeer goede resultaten behaald en ben ik erin geslaagd om mijn eerste pull-up, chin-up en dip te doen! <br> ...
 author: Giorgia dB.
-
-google_maps_url: #

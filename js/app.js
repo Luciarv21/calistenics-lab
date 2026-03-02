@@ -23,12 +23,56 @@ document.addEventListener('DOMContentLoaded', () => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }
 
+  // Map between tab IDs and clean URL paths
+  const tabToPath = {
+    welcome: '/',
+    about: '/about',
+    services: '/programs',
+    contact: '/contact',
+    reviews: '/reviews',
+  };
+
+  function getTabFromPath(pathname) {
+    const path = pathname.replace(/\/+$/, '') || '/';
+    switch (path) {
+      case '/':
+      case '/index.html':
+        return 'welcome';
+      case '/about':
+        return 'about';
+      case '/programs':
+        return 'services';
+      case '/contact':
+        return 'contact';
+      case '/reviews':
+        return 'reviews';
+      default:
+        return 'welcome';
+    }
+  }
+
+  function updateUrlForTab(tabId, replace = false) {
+    if (!window.history || !window.history.pushState) return;
+    const path = tabToPath[tabId] || '/';
+    if (window.location.pathname === path) return;
+    const state = { tabId };
+    const method = replace ? 'replaceState' : 'pushState';
+    window.history[method](state, '', path);
+  }
+
+  window.addEventListener('popstate', () => {
+    const tabId = getTabFromPath(window.location.pathname);
+    switchTab(tabId);
+  });
+
   // Attach click handlers to all [data-tab] elements (nav links + CTA buttons)
   function bindTabTriggers() {
     document.querySelectorAll('[data-tab]').forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
         e.preventDefault();
-        switchTab(trigger.getAttribute('data-tab'));
+        const tabId = trigger.getAttribute('data-tab');
+        switchTab(tabId);
+        updateUrlForTab(tabId);
       });
     });
   }
@@ -779,7 +823,7 @@ document.addEventListener('DOMContentLoaded', () => {
       </div>
       <div class="reviews-cta">
         <p>${isNL ? 'Bekijk al onze reviews op' : 'See all our reviews on'}</p>
-        <a href="${header.google_maps_url || '#'}" class="btn btn-outline" target="_blank" rel="noopener">Google Maps</a>
+        <a href="${header.google_maps_url || '#'}" class="btn btn-outline" target="_blank" rel="noopener noreferrer">Google Maps</a>
       </div>
     `;
   }
@@ -863,6 +907,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Set up scroll reveal for elements
     initScrollReveal();
+
+    // Activate the correct tab based on the current path (clean URLs)
+    const initialTab = getTabFromPath(window.location.pathname);
+    switchTab(initialTab);
+    updateUrlForTab(initialTab, true);
   }
 
   function initScrollReveal() {
