@@ -1,18 +1,18 @@
 heading: Wat onze atleten zeggen
 subtitle: Echte ervaringen van onze community
-google_maps_url: https://maps.app.goo.gl/rNPDQHVsnFyevY8u5
+google_maps_url: https://maps.app.goo.gl/QMpXpTV5xZCAawNz8
 
 ---
 stars: 5
-text: Great PT sessions, have been working on handstand, muscle up and human flag and successfully made it there thanks to rigorous training plans and strong advice <br> ...
-author: Pierre L.
+text: I’ve trained with Bryan for over 2 years now and he is absolutely amazing. I went from a calisthenics beginner to being able to do the human flag, front lever, back lever, muscle up, and very soon one arm pull ups. Bryan is an excellent coach and would definitely recommend him to anyone who wants to get into calisthenics
+author: Edward
 
 ---
 stars: 5
-text: Continuing my calisthenics journey with Bryan was one of the best decisions I made last year. He is incredibly fun, kind and knowledgeable and always goes the extra mile to support and guide. <br> ...
-author: Long V.
+text: Of je nu beginner of gevorderd bent Bryan heeft voor iedereen een passende oefening / traning. De groeplessen zijn gezellig en uitdagend. Ik ben zo enthousiast geworden dat ik binnenkort de online coaching ga starten om mijn leerweg te versnellen!
+author: Floris
 
 ---
 stars: 5
-text: In slechts een paar maanden personal training, heb ik zeer goede resultaten behaald en ben ik erin geslaagd om mijn eerste pull-up, chin-up en dip te doen! <br> ...
-author: Giorgia dB.
+text: He is flexible (since we’re all busy bees), methodical, he adapts to your needs, and always tries to vary the exercises to make the sessions more fun. Anyway, just go for it, cuz the guy is also real cool!
+author: Lineden

@@ -14,4 +14,5 @@ location: GymOne Amstelveen (indoor)
 email: info@calisthenicsskilllab.nl
 
 social_label: Volg ons
-instagram: @Calibybryy | https://www.instagram.com/calibybryy/
+instagram: @calisthenics_skilllab | https://www.instagram.com/calisthenics_skilllab
+
