@@ -17,6 +17,7 @@ function bindContactForm() {
     const formData = {
       name: document.getElementById('name').value,
       email: document.getElementById('email').value,
+      phoneNumber: document.getElementById('phoneNumber').value,
       subject: document.getElementById('subject').value,
       message: document.getElementById('message').value,
     };
@@ -79,6 +80,10 @@ export default async function loadContact() {
         <div class="form-group">
           <label for="email">${t('form.email')}</label>
           <input type="email" id="email" name="email" required placeholder="${t('form.emailPlaceholder')}">
+        </div>
+        <div class="form-group">
+          <label for="phoneNumber">${t('form.phoneNumber')}</label>
+          <input type="tel" id="phone" name="phoneNumber" required placeholder="${t('form.phoneNumberPlaceholder')}">
         </div>
         <div class="form-group">
           <label for="subject">${t('form.subject')}</label>

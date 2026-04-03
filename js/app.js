@@ -720,8 +720,10 @@ document.addEventListener('DOMContentLoaded', () => {
       email: isNL ? 'E-mail' : 'Email',
       subject: isNL ? 'Onderwerp' : 'Subject',
       message: isNL ? 'Bericht' : 'Message',
+      phoneNumber: isNL ? 'Telefoonnummer' : 'Phone Number',
       namePlaceholder: isNL ? 'Uw naam' : 'Your name',
       emailPlaceholder: isNL ? 'uw@email.nl' : 'your@email.com',
+      phoneNumberPlaceholder: isNL ? 'Uw telefoonnummer ' : 'Your phone number ',
       subjectPlaceholder: isNL ? 'Waar bent u in geïnteresseerd?' : 'What are you interested in?',
       messagePlaceholder: isNL ? 'Vertel ons over uw doelen...' : 'Tell us about your goals...',
       submit: isNL ? 'Verstuur' : 'Send Message',
@@ -740,6 +742,10 @@ document.addEventListener('DOMContentLoaded', () => {
           <div class="form-group">
             <label for="email">${labels.email}</label>
             <input type="email" id="email" name="email" required placeholder="${labels.emailPlaceholder}">
+          </div>
+          <div class="form-group">
+            <label for="phoneNumber">${labels.phoneNumber}</label>
+            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="${labels.phoneNumberPlaceholder}">
           </div>
           <div class="form-group">
             <label for="subject">${labels.subject}</label>
@@ -852,6 +858,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const formData = {
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
+        phoneNumber: document.getElementById('phoneNumber').value,
         subject: document.getElementById('subject').value,
         message: document.getElementById('message').value,
       };

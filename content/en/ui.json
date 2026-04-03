@@ -14,6 +14,7 @@
     "subjectPlaceholder": "What are you interested in?",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your@email.com",
+    "phoneNumberPlaceholder": "Your phone number ",
     "messagePlaceholder": "Tell us about your goals...",
     "submit": "Send Message",
     "success": "Message sent successfully! We'll get back to you soon."
