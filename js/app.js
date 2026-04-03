@@ -836,75 +836,132 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ========== CONTACT FORM ==========
 
-  function bindContactForm() {
-    const contactForm = document.getElementById('contact-form');
-    const formStatus = document.getElementById('form-status');
-    if (!contactForm) return;
+function bindContactForm() {
+  const contactForm = document.getElementById('contact-form');
+  const formStatus = document.getElementById('form-status');
+  const phoneInput = document.getElementById('phoneNumber');
 
-    contactForm.addEventListener('submit', async (e) => {
-      e.preventDefault();
+  if (!contactForm) return;
 
-      const isNL = currentLang === 'nl';
-      const successMessage = isNL
-        ? 'Bericht verzonden! We nemen snel contact op.'
-        : "Message sent successfully! We'll get back to you soon.";
-      const errorMessage = isNL
-        ? 'Er ging iets mis. Probeer het opnieuw.'
-        : 'Something went wrong. Please try again.';
-      const networkErrorMessage = isNL
-        ? 'Netwerkfout. Probeer het opnieuw.'
-        : 'Network error. Please try again.';
+  // Phone validation function
+  function validatePhoneNumber(phone) {
+    if (!phone || phone.trim().length === 0) return false;
 
-      const formData = {
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        phoneNumber: document.getElementById('phoneNumber').value,
-        subject: document.getElementById('subject').value,
-        message: document.getElementById('message').value,
-      };
+    const cleaned = phone.replace(/[\s\-\(\)\+]/g, '');
+    const digitCount = cleaned.replace(/\D/g, '').length;
 
-      if (!config.formEndpoint) {
-        formStatus.textContent = successMessage;
-        formStatus.className = 'form-status success';
-        contactForm.reset();
-        console.log('Form data (no endpoint configured):', formData);
-        return;
+    if (digitCount < 7) return false;
+
+    const patterns = {
+      us: /^[\+]?1?[\s\-]?[(]?[\d]{3}[)]?[\s\-]?[\d]{3}[\s\-]?[\d]{4}$/,
+      nl: /^[\+]?31[\s\-]?[(]?[\d]{1,3}[)]?[\s\-]?[\d]{0,8}$|^0[\s\-]?[(]?[\d]{1,3}[)]?[\s\-]?[\d]{0,8}$/,
+    };
+
+    if (patterns.us.test(phone) || patterns.nl.test(phone)) {
+      return true;
+    }
+
+    return digitCount >= 7;
+  }
+
+  // Real-time validation on blur
+  if (phoneInput) {
+    phoneInput.addEventListener('blur', () => {
+      if (phoneInput.value && !validatePhoneNumber(phoneInput.value)) {
+        phoneInput.classList.add('invalid');
+      } else {
+        phoneInput.classList.remove('invalid');
       }
+    });
 
-      formStatus.textContent = isNL ? 'Bezig met verzenden…' : 'Sending…';
-      formStatus.className = 'form-status';
+    // Clear invalid class on input
+    phoneInput.addEventListener('input', () => {
+      phoneInput.classList.remove('invalid');
+    });
+  }
+
+  contactForm.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const isNL = currentLang === 'nl';
+    const phoneNumber = phoneInput?.value || '';
+
+    // Validate phone number on submit
+    if (!validatePhoneNumber(phoneNumber)) {
+      formStatus.textContent = isNL
+        ? 'Voer een geldig telefoonnummer in'
+        : 'Please enter a valid phone number';
+      formStatus.className = 'form-status error';
+      phoneInput?.classList.add('invalid');
+      return;
+    }
+
+    const successMessage = isNL
+      ? 'Bericht verzonden! We nemen snel contact op.'
+      : "Message sent successfully! We'll get back to you soon.";
+    const errorMessage = isNL
+      ? 'Er ging iets mis. Probeer het opnieuw.'
+      : 'Something went wrong. Please try again.';
+    const networkErrorMessage = isNL
+      ? 'Netwerkfout. Probeer het opnieuw.'
+      : 'Network error. Please try again.';
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      phoneNumber: phoneNumber,
+      subject: document.getElementById('subject').value,
+      message: document.getElementById('message').value,
+    };
+
+    if (!config.formEndpoint) {
+      formStatus.textContent = successMessage;
+      formStatus.className = 'form-status success';
+      phoneInput?.classList.remove('invalid');
+      contactForm.reset();
+      console.log('Form data (no endpoint configured):', formData);
 
       setTimeout(() => {
         formStatus.textContent = '';
         formStatus.className = 'form-status';
       }, 5000);
+      return;
+    }
 
-      try {
-        const res = await fetch(config.formEndpoint, {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-            Accept: 'application/json',
-          },
-          body: JSON.stringify(formData),
-        });
+    formStatus.textContent = isNL ? 'Bezig met verzenden…' : 'Sending…';
+    formStatus.className = 'form-status';
 
-        if (!res.ok) {
-          formStatus.textContent = errorMessage;
-          formStatus.className = 'form-status error';
-          return;
-        }
+    try {
+      const res = await fetch(config.formEndpoint, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
 
-        formStatus.textContent = successMessage;
-        formStatus.className = 'form-status success';
-        contactForm.reset();
-      } catch {
-        formStatus.textContent = networkErrorMessage;
+      if (!res.ok) {
+        formStatus.textContent = errorMessage;
         formStatus.className = 'form-status error';
+        return;
       }
-    });
-  }
 
+      formStatus.textContent = successMessage;
+      formStatus.className = 'form-status success';
+      phoneInput?.classList.remove('invalid');
+      contactForm.reset();
+    } catch {
+      formStatus.textContent = networkErrorMessage;
+      formStatus.className = 'form-status error';
+    }
+
+    setTimeout(() => {
+      formStatus.textContent = '';
+      formStatus.className = 'form-status';
+    }, 5000);
+  });
+}
   // ========== LOAD EVERYTHING ==========
 
   async function init() {

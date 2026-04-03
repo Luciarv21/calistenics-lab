@@ -43,6 +43,8 @@ function bindContactForm() {
   const contactForm = document.getElementById('contact-form');
   const formStatus = document.getElementById('form-status');
   const phoneInput = document.getElementById('phoneNumber');
+  console.log('Phone input element:', phoneInput);
+  console.log('Contact form found:', contactForm);
   if (!contactForm) return;
 
   // Real-time validation feedback on phone input
