@@ -11,6 +11,7 @@
     "email": "Email",
     "subject": "Subject",
     "message": "Message",
+    "phoneNumber": "Phone Number",
     "subjectPlaceholder": "What are you interested in?",
     "namePlaceholder": "Your name",
     "emailPlaceholder": "your@email.com",
