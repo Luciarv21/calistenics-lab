@@ -83,7 +83,7 @@ export default async function loadContact() {
         </div>
         <div class="form-group">
           <label for="phoneNumber">${t('form.phoneNumber')}</label>
-          <input type="tel" id="phone" name="phoneNumber" required placeholder="${t('form.phoneNumberPlaceholder')}">
+          <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="${t('form.phoneNumberPlaceholder')}">
         </div>
         <div class="form-group">
           <label for="subject">${t('form.subject')}</label>
