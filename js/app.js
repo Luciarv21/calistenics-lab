@@ -745,7 +745,7 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="form-group">
             <label for="phoneNumber">${labels.phoneNumber}</label>
-            <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="${labels.phoneNumberPlaceholder}">
+            <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="${labels.phoneNumberPlaceholder}">
           </div>
           <div class="form-group">
             <label for="subject">${labels.subject}</label>
