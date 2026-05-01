@@ -1,5 +1,5 @@
 heading: Rooster
 subtitle: Groepslessen
 
-day: dinsdag | 17:00 — 18:00
-day: donderdag | 17:00 — 18:00
+day: maandag | 5:00 PM — 6:00 PM
+day: woensdag | 6:00 PM — 7:00 PM

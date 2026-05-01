@@ -1,5 +1,5 @@
 heading: Schedule
 subtitle: Group Training sessions
 
-day: Tuesday | 5:00 PM — 6:00 PM
-day: Thursday | 5:00 PM — 6:00 PM
+day: Monday | 5:00 PM — 6:00 PM
+day: Wednesday | 6:00 PM — 7:00 PM
